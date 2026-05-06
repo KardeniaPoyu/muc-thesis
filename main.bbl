@@ -1,0 +1,122 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{muc-guideline}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=aab571afb4fbde4dc790eb7c1c4470d4}{%
+           family={{中央民族大学理学院}},
+           familyi={中\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=aab571afb4fbde4dc790eb7c1c4470d4}{%
+           family={{中央民族大学理学院}},
+           familyi={中\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {中央民族大学}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{fullhash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{fullhashraw}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{bibnamehash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{authorbibnamehash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{authornamehash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{authorfullhash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{authorfullhashraw}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{nameabibnamehash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{nameanamehash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{nameafullhash}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \strng{nameafullhashraw}{aab571afb4fbde4dc790eb7c1c4470d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{根据学院发布模板整理}
+      \field{title}{本科毕业论文模板与撰写要求}
+      \field{usera}{Z}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \keyw{muc-guideline}
+    \endentry
+    \entry{lamport1994latex}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Reading, MA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \strng{bibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \strng{nameabibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{nameanamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{nameafullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{nameafullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{LaTeX: A Document Preparation System}
+      \field{usera}{M}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \keyw{lamport1994latex}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

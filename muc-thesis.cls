@@ -23,14 +23,15 @@
 \RequirePackage{tabularx}
 
 \geometry{
+  a4paper,
   top=2.5cm,
   bottom=2.5cm,
-  left=2cm,
-  right=2cm,
+  left=2.0cm,
+  right=2.0cm,
   bindingoffset=0.5cm,
   headheight=15pt,
-  headsep=0.6cm,
-  footskip=1.2cm
+  headsep=0.5cm,
+  footskip=0.75cm
 }
 
 \setmainfont{Times New Roman}
@@ -39,7 +40,12 @@
 \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
 \setCJKsansfont{SimHei}
 \setCJKmonofont{FangSong}
-\newCJKfontfamily\xiaobiaosong{方正小标宋简体}
+% Define xiaobiaosong with fallback
+\IfFontExistsTF{方正小标宋简体}{
+  \newCJKfontfamily\xiaobiaosong{方正小标宋简体}
+}{
+  \let\xiaobiaosong\heiti % Fallback to Heiti if missing
+}
 
 \AtBeginDocument{%
   \zihao{5}%
@@ -80,42 +86,45 @@
 
 \newcommand{\muc@fillline}[1]{\underline{\makebox[8.2cm][c]{#1}}}
 
+% Header and Footer
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{\zihao{5}\songti 中央民族大学本科生毕业论文(设计)}
-\fancyfoot[C]{\zihao{5}\thepage}
+\fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业论文(设计)}
+\fancyfoot[C]{\zihao{-5}\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0pt}
 
-\fancypagestyle{plain}{%
+\fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[C]{\zihao{5}\songti 中央民族大学本科生毕业论文(设计)}
-  \fancyfoot[C]{\zihao{5}\thepage}
-  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业论文(设计)}
+  \fancyfoot[C]{\zihao{-5}\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
 }
 
+% Fonts and Styles
 \ctexset{
   chapter = {
     format = \heiti\zihao{3}\centering,
     name = {,},
     number = \arabic{chapter},
-    beforeskip = 12pt,
-    afterskip = 12pt
+    beforeskip = 0.5\baselineskip,
+    afterskip = 2\baselineskip,
+    fixskip = true
   },
   section = {
     format = \heiti\zihao{4},
-    beforeskip = 12pt,
-    afterskip = 12pt
+    beforeskip = 24pt,
+    afterskip = 18pt,
+    fixskip = true
   },
   subsection = {
     format = \heiti\zihao{-4},
-    number = \arabic{chapter}.\arabic{section}.\arabic{subsection},
-    beforeskip = 8pt,
-    afterskip = 6pt
+    beforeskip = 12pt,
+    afterskip = 12pt
   }
 }
 
-% Default body font size
+% Body settings
+\setstretch{1.5}
 \renewcommand{\normalsize}{\zihao{5}}
 \zihao{5}
 
@@ -179,7 +188,7 @@
     \vspace*{-2.0cm}
     \ifstrempty{\muc@coverlogo}{}{%
       \includegraphics[width=11.6cm]{\muc@coverlogo}\par
-      \vspace{-0.6cm}
+      \vspace{-1.5cm}
     }
     {\heiti\zihao{0}\muc@covercategory\par}
     \vspace{0.8cm}
@@ -211,12 +220,12 @@
   \cleardoublepage
   \pagestyle{empty}
   \begin{center}
-    {\zihao{2}\heiti 本科毕业论文（设计）任务书}
+    {\zihao{2}\xiaobiaosong 本科毕业论文（设计）任务书}
   \end{center}
   \noindent
   \zihao{5}\songti
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.5cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.5cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.8cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.8cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
     \hline
     学\hspace{1em}院 & \muc@college & 专\hspace{1em}业 & \muc@major \\ \hline
     年\hspace{1em}级 & \muc@grade   & 学\hspace{1em}号 & \muc@studentid \\ \hline
@@ -240,7 +249,7 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    {\zihao{2}\heiti 本科毕业论文（设计）学术诚信承诺书}
+    {\zihao{2}\xiaobiaosong 本科毕业论文（设计）学术诚信承诺书}
   \end{center}
   \vspace{1.5cm}
   \begin{center}
@@ -260,7 +269,7 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    {\zihao{2}\heiti 本科毕业论文（设计）使用授权书}
+    {\zihao{2}\xiaobiaosong 本科毕业论文（设计）使用授权书}
   \end{center}
   \vspace{1.5cm}
   \begin{center}
@@ -282,11 +291,11 @@
   \begin{center}
     {\heiti\zihao{3} \@title}
   \end{center}
-  \vspace{2em}
+  \vspace{1.5em}
   \begin{center}
     {\heiti\zihao{4} 摘\hspace{2em}要}
   \end{center}
-  \vspace{1.2em}
+  \vspace{0.5em}
   \zihao{5}\songti
 }{
   \par\vspace{2em}
@@ -300,11 +309,11 @@
   \begin{center}
     {\bfseries\rmfamily\zihao{3} \muc@entitle}
   \end{center}
-  \vspace{2em}
+  \vspace{1.5em}
   \begin{center}
     {\bfseries\rmfamily\zihao{3} Abstract}
   \end{center}
-  \vspace{1.2em}
+  \vspace{0.5em}
   \zihao{5}\rmfamily
 }{
   \par\vspace{2em}

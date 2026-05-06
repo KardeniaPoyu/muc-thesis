@@ -1,6 +1,12 @@
-﻿# MUC Thesis LaTeX Template
+# 中央民族大学本科毕业论文 LaTeX 模板 (MUC Thesis LaTeX Template)
 
 本目录提供一个面向“中央民族大学本科毕业论文（设计）”的 XeLaTeX 模板，核心文件为 `muc-thesis.cls`。
+
+## 关键页面说明
+
+> [!IMPORTANT]
+> **任务书、学术诚信书、使用授权书**的标题默认采用 **方正小标宋简体二号** 字。
+> 如果您的系统中没有该字体或有特殊需求，可以在 `muc-thesis.cls` 中自行替换或修改。
 
 ## 推荐项目结构
 

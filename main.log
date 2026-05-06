@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.5.6)  7 MAY 2026 00:31
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.5.6)  7 MAY 2026 00:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1339,7 +1339,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * bindingoffset: 14.22636pt
@@ -1352,11 +1352,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \textheight=702.78308pt
 * \oddsidemargin=-1.13812pt
 * \evensidemargin=-15.36449pt
-* \topmargin=-33.20993pt
+* \topmargin=-30.36447pt
 * \headheight=15.0pt
-* \headsep=17.07182pt
+* \headsep=14.22636pt
 * \topskip=12.0pt
-* \footskip=34.14322pt
+* \footskip=21.33955pt
 * \marginparwidth=38.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
@@ -1593,12 +1593,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27904 strings out of 402807
- 577362 string characters out of 5452381
- 1542187 words of memory out of 5000000
- 56421 multiletter control sequences out of 15000+600000
- 645486 words of font info for 172 fonts, out of 8000000 for 9000
+ 27907 strings out of 402807
+ 577431 string characters out of 5452381
+ 1542104 words of memory out of 5000000
+ 56422 multiletter control sequences out of 15000+600000
+ 645494 words of font info for 173 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 107i,11n,125p,1197b,4868s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,12n,125p,1197b,4868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (10 pages).

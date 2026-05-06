@@ -9,6 +9,7 @@
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
+\graphicspath{{figures/}}
 \RequirePackage{booktabs}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -19,6 +20,7 @@
 \RequirePackage{pdfpages}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[backend=biber,style=gb7714-2015]{biblatex}
+\RequirePackage{tabularx}
 
 \geometry{
   top=2.5cm,
@@ -37,6 +39,7 @@
 \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
 \setCJKsansfont{SimHei}
 \setCJKmonofont{FangSong}
+\newCJKfontfamily\xiaobiaosong{方正小标宋简体}
 
 \AtBeginDocument{%
   \zihao{5}%
@@ -86,31 +89,35 @@
 
 \fancypagestyle{plain}{%
   \fancyhf{}
+  \fancyhead[C]{\zihao{5}\songti 中央民族大学本科生毕业论文(设计)}
   \fancyfoot[C]{\zihao{5}\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
 
 \ctexset{
   chapter = {
-    format = \centering\heiti\zihao{3},
-    name = {},
+    format = \heiti\zihao{3}\centering,
+    name = {,},
     number = \arabic{chapter},
     beforeskip = 12pt,
-    afterskip = 18pt
+    afterskip = 12pt
   },
   section = {
-    format = \heiti\zihao{-4},
-    number = \arabic{chapter}.\arabic{section},
+    format = \heiti\zihao{4},
     beforeskip = 12pt,
-    afterskip = 8pt
+    afterskip = 12pt
   },
   subsection = {
-    format = \songti\bfseries\zihao{5},
+    format = \heiti\zihao{-4},
     number = \arabic{chapter}.\arabic{section}.\arabic{subsection},
     beforeskip = 8pt,
     afterskip = 6pt
   }
 }
+
+% Default body font size
+\renewcommand{\normalsize}{\zihao{5}}
+\zihao{5}
 
 \@addtoreset{figure}{chapter}
 \@addtoreset{table}{chapter}
@@ -136,29 +143,43 @@
 }
 
 \renewcommand{\contentsname}{目\hspace{2em}录}
-\renewcommand{\cfttoctitlefont}{\hfill\heiti\zihao{3}}
-\renewcommand{\cftaftertoctitle}{\hfill}
+% Table of Contents styling
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\heiti\zihao{3}}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftbeforetoctitleskip}{0pt}
+\renewcommand{\cftaftertoctitleskip}{2em}
+
+% Set all entries to Songti Wu-hao
 \renewcommand{\cftchapfont}{\songti\zihao{5}}
 \renewcommand{\cftsecfont}{\songti\zihao{5}}
+\renewcommand{\cftsubsecfont}{\songti\zihao{5}}
 \renewcommand{\cftchappagefont}{\songti\zihao{5}}
 \renewcommand{\cftsecpagefont}{\songti\zihao{5}}
+\renewcommand{\cftsubsecpagefont}{\songti\zihao{5}}
 
-\newcommand{\makemuctableofcontents}{%
-  \cleardoublepage
-  \pagestyle{plain}
-  \tableofcontents
+% Remove bold for chapters in TOC
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{%
   \cleardoublepage
   \pagestyle{fancy}
+  \oldtableofcontents
+  \cleardoublepage
+}
+
+\newcommand{\makemuctableofcontents}{%
+  \tableofcontents
 }
 
 \newcommand{\makecoverpage}{%
   \begin{titlepage}
     \thispagestyle{empty}
     \centering
-    \vspace*{-1.6cm}
+    \vspace*{-2.0cm}
     \ifstrempty{\muc@coverlogo}{}{%
       \includegraphics[width=11.6cm]{\muc@coverlogo}\par
-      \vspace{-0.2cm}
+      \vspace{-0.6cm}
     }
     {\heiti\zihao{0}\muc@covercategory\par}
     \vspace{0.8cm}
@@ -186,35 +207,109 @@
   \clearpage
 }
 
-\NewDocumentEnvironment{cnabstract}{}{
+\newcommand{\maketaskbook}{%
   \cleardoublepage
-  \phantomsection
-  \addcontentsline{toc}{chapter}{摘要}
-  \thispagestyle{plain}
+  \pagestyle{empty}
   \begin{center}
-    {\heiti\zihao{-3}摘\hspace{1em}要}
+    {\zihao{2}\heiti 本科毕业论文（设计）任务书}
   \end{center}
-  \vspace{1em}
-  \songti\zihao{5}
-}{
-  \par\vspace{1em}
-  \noindent{\heiti\bfseries 关键词：}\muc@keywordsCN
-  \par\cleardoublepage
+  \noindent
+  \zihao{5}\songti
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.5cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.5cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
+    \hline
+    学\hspace{1em}院 & \muc@college & 专\hspace{1em}业 & \muc@major \\ \hline
+    年\hspace{1em}级 & \muc@grade   & 学\hspace{1em}号 & \muc@studentid \\ \hline
+    姓\hspace{1em}名 & \@author     & 起止时间 & \rmfamily\zihao{-4} 2026.10.15--2027.4.20 \\ \hline
+    指导教师姓名 & \muc@supervisor & 职\hspace{1em}称 & \\ \hline
+    题\hspace{1em}目 & \multicolumn{3}{l|}{\fangsong\zihao{4} \@title} \\ \hline
+    \multicolumn{4}{|>{\fangsong\zihao{4}}l|}{目的} \\ \hline
+    \multicolumn{4}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth}|}{\rule{0pt}{1.5cm}} \\ \hline
+    \multicolumn{4}{|>{\fangsong\zihao{4}}l|}{内容与要求（包括原始数据、技术要求、工作要求及成果要求等）} \\ \hline
+    \multicolumn{4}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth}|}{\rule{0pt}{3.5cm}} \\ \hline
+    \multicolumn{4}{|>{\fangsong\zihao{4}}l|}{进度安排} \\ \hline
+    \multicolumn{4}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth}|}{\rule{0pt}{2cm}} \\ \hline
+    \multicolumn{4}{|>{\fangsong\zihao{4}}l|}{文献查阅指引} \\ \hline
+    \multicolumn{4}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth}|}{\rule{0pt}{2cm}} \\ \hline
+    指导教师（签名） & & 日\hspace{1em}期 & 202X.11.30 \\ \hline
+  \end{tabularx}
+  \cleardoublepage
 }
 
-\NewDocumentEnvironment{enabstract}{}{
-  \phantomsection
-  \addcontentsline{toc}{chapter}{Abstract}
-  \thispagestyle{plain}
+\newcommand{\makeintegritypage}{%
+  \cleardoublepage
+  \thispagestyle{empty}
   \begin{center}
-    {\rmfamily\bfseries\Large Abstract}
+    {\zihao{2}\heiti 本科毕业论文（设计）学术诚信承诺书}
   \end{center}
-  \vspace{1em}
-  \rmfamily\zihao{5}
+  \vspace{1.5cm}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{image2.png}
+  \end{center}
+  \vspace{3cm}
+  \begin{flushright}
+    \zihao{-4}
+    承诺人签名：\underline{\hspace{4cm}} \par
+    \vspace{0.5cm}
+    日\hspace{2.5em}期：\underline{\makebox[4cm][c]{2026.4.20}} \par
+  \end{flushright}
+  \cleardoublepage
+}
+
+\newcommand{\makelicensepage}{%
+  \cleardoublepage
+  \thispagestyle{empty}
+  \begin{center}
+    {\zihao{2}\heiti 本科毕业论文（设计）使用授权书}
+  \end{center}
+  \vspace{1.5cm}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{image3.png}
+  \end{center}
+  \vspace{2cm}
+  \begin{flushright}
+    \zihao{-4}
+    本人签名：\underline{\hspace{4cm}} \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
+    \vspace{1cm}
+    指导老师签名：\underline{\hspace{4cm}} \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
+  \end{flushright}
+  \cleardoublepage
+}
+
+\newenvironment{cnabstract}{
+  \cleardoublepage
+  \pagestyle{empty}
+  \begin{center}
+    {\heiti\zihao{3} \@title}
+  \end{center}
+  \vspace{2em}
+  \begin{center}
+    {\heiti\zihao{4} 摘\hspace{2em}要}
+  \end{center}
+  \vspace{1.2em}
+  \zihao{5}\songti
 }{
-  \par\vspace{1em}
-  \noindent{\rmfamily\bfseries Keywords: }\muc@keywordsEN
-  \par\cleardoublepage
+  \par\vspace{2em}
+  \noindent{\heiti\zihao{-4} 关键词：}\muc@keywordsCN
+  \cleardoublepage
+}
+
+\newenvironment{enabstract}{
+  \cleardoublepage
+  \pagestyle{empty}
+  \begin{center}
+    {\bfseries\rmfamily\zihao{3} \muc@entitle}
+  \end{center}
+  \vspace{2em}
+  \begin{center}
+    {\bfseries\rmfamily\zihao{3} Abstract}
+  \end{center}
+  \vspace{1.2em}
+  \zihao{5}\rmfamily
+}{
+  \par\vspace{2em}
+  \noindent{\bfseries\rmfamily\zihao{-4} Keywords: }\muc@keywordsEN
+  \cleardoublepage
 }
 
 \newcommand{\insertfrontpdf}[1]{%

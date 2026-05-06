@@ -1,6 +1,6 @@
 \documentclass{muc-thesis}
 
-\title{毕业论文题目}
+\title{中文题目（毕业论文题目）}
 \author{学生姓名}
 \date{2026年4月20日}
 \subtitle{[副标题，可以没有]}
@@ -11,11 +11,11 @@
 \major{统计学}
 \supervisor{指导教师姓名}
 
-\entitle{An English Title for the Undergraduate Thesis}
+\entitle{English Title}
 \enauthor{Student Name}
 \ensupervisor{Supervisor Name}
 
-\coverlogo{vertopal_e0d7cf72ee6745ca98d1712b40ad6067/media/image1.jpeg}
+\coverlogo{image1.png}
 \covercategory{本科毕业论文（设计）}
 \keywordsCN{中央民族大学；本科毕业论文；LaTeX 模板；XeLaTeX}
 \keywordsEN{Minzu University of China; undergraduate thesis; LaTeX template; XeLaTeX}
@@ -25,6 +25,9 @@
 \begin{document}
 
 \makecoverpage
+\maketaskbook
+\makeintegritypage
+\makelicensepage
 
 % 如有签字版 PDF，可取消注释并替换文件名
 % \insertfrontpdf{frontmatter/task-book-signed.pdf}
@@ -37,13 +40,13 @@
 \end{cnabstract}
 
 \begin{enabstract}
-The English abstract should briefly summarize the research background, objective,
-methodology, results, and conclusion of the thesis. This template provides the
-cover page, abstract environments, chapter-based numbering for figures, tables,
-and equations, as well as bibliography support based on the GB/T 7714-2015 style.
+  The English abstract should briefly summarize the research background, objective,
+  methodology, results, and conclusion of the thesis. This template provides the
+  cover page, abstract environments, chapter-based numbering for figures, tables,
+  and equations, as well as bibliography support based on the GB/T 7714-2015 style.
 \end{enabstract}
 
-\makemuctableofcontents
+\tableofcontents
 
 \mainmatter
 
@@ -57,7 +60,7 @@ and equations, as well as bibliography support based on the GB/T 7714-2015 style
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.72\textwidth]{vertopal_e0d7cf72ee6745ca98d1712b40ad6067/media/image1.jpeg}
+  \includegraphics[width=0.72\textwidth]{image1.png}
   \caption{中央民族大学校名与校标示例}
   \label{fig:logo}
 \end{figure}

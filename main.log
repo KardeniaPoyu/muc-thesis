@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.5.6)  6 MAY 2026 23:50
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.5.6)  7 MAY 2026 00:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1158,6 +1158,26 @@ Package biblatex Info: ... and expl3
 (D:\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 ))
+(D:\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (D:\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen291
+\ar@mcellbox=\box61
+\extrarowheight=\dimen292
+\NC@list=\toks28
+\extratabsurround=\skip143
+\backup@length=\skip144
+\ar@cellbox=\box62
+)
+\TX@col@width=\dimen293
+\TX@old@table=\dimen294
+\TX@old@col=\dimen295
+\TX@target=\dimen296
+\TX@delta=\dimen297
+\TX@cols=\count492
+\TX@ftn=\toks29
+)
 
 Package fontspec Info: 
 (fontspec)             Font family 'TimesNewRoman(0)' created for font 'Times
@@ -1221,8 +1241,8 @@ Package xeCJK Warning: Redefining CJKfamily `\CJKsfdefault' (Microsoft YaHei).
 Package xeCJK Warning: Redefining CJKfamily `\CJKttdefault' (FangSong).
 
 )
-\@quotelevel=\count492
-\@quotereset=\count493
+\@quotelevel=\count493
+\@quotereset=\count494
  (main.aux)
 \openout1 = `main.aux'.
 
@@ -1414,9 +1434,8 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"SimSun/OT:script=hani;language=dflt;"
 
-File: vertopal_e0d7cf72ee6745ca98d1712b40ad6067/media/image1.jpeg Graphic file 
-(type bmp)
-<vertopal_e0d7cf72ee6745ca98d1712b40ad6067/media/image1.jpeg>
+File: figures/image1.png Graphic file (type bmp)
+<figures/image1.png>
 
 Package fontspec Info: 
 (fontspec)             Could not resolve font "SimHei/BI" (it probably doesn't
@@ -1509,33 +1528,46 @@ Underfull \hbox (badness 10000) detected at line 27
 
 
 ]
-
-LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
-(Font)              using `TU/SimHei(0)/m/n' instead on input line 37.
+Overfull \hbox (1.75656pt too wide) in paragraph at lines 28--28
+ [] 
+ []
 
 [1
 
 
-] [2
+]
+File: figures/image2.png Graphic file (type bmp)
+<figures/image2.png>
+ [2
+
+
+]
+File: figures/image3.png Graphic file (type bmp)
+<figures/image3.png>
+ [3
+
+
+] [4
+
+
+] [5
+
 
 ] (main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3
-
+ [6
 
 ]
 1
-File: vertopal_e0d7cf72ee6745ca98d1712b40ad6067/media/image1.jpeg Graphic file 
-(type bmp)
-<vertopal_e0d7cf72ee6745ca98d1712b40ad6067/media/image1.jpeg>
+File: figures/image1.png Graphic file (type bmp)
+<figures/image1.png>
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 61.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 64.
 
 [1
-
 
 
 ]
@@ -1555,18 +1587,18 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B38FF2B3CF85B359D931EBDFA053B51B;652.
+(rerunfilecheck)             Checksum: C908BF8A1486A2B318C459D429C1C05B;508.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27647 strings out of 402807
- 569380 string characters out of 5452381
- 1536546 words of memory out of 5000000
- 56177 multiletter control sequences out of 15000+600000
- 642615 words of font info for 156 fonts, out of 8000000 for 9000
+ 27904 strings out of 402807
+ 577362 string characters out of 5452381
+ 1542187 words of memory out of 5000000
+ 56421 multiletter control sequences out of 15000+600000
+ 645486 words of font info for 172 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 107i,11n,125p,1197b,4872s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,11n,125p,1197b,4868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (7 pages).
+Output written on main.pdf (10 pages).

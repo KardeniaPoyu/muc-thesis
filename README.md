@@ -32,8 +32,7 @@
 
 ### Devcontainer 编辑（本地 & 在线）
 
-> **Important**
->
+> [!IMPORTANT]
 > 无论是本地还是在线编辑，都需要首先创建自己的论文仓库，在自己的仓库进行修改，并建议及时 `commit & push` 到远程仓库进行备份。
 
 本模板提供了 [VS Code Remote - Containers](https://code.visualstudio.com/docs/remote/containers) 相关配置文件，包含了 texlive 2022 和 VS Code 中文和 LaTeX Workshop 插件，可用于本地或在线容器化编辑。

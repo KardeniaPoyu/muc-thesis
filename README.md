@@ -92,7 +92,7 @@ muc-thesis/
 ├── muc-thesis.cls        # 模板类定义（格式核心）
 ├── references.bib        # 参考文献数据库
 ├── figures/              # 图片资源存放目录
-└── frontmatter/          # 存放任务书、授权书等附件
+└── frontmatter/          # 存放任务书、授权书等附件（若需要）
 ```
 
 

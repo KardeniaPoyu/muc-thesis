@@ -58,6 +58,7 @@ xelatex main
 即可生成 `main.pdf` 文件。
 
 
+---
 
 ## 模板关键特性
 

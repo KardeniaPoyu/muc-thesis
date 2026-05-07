@@ -65,18 +65,18 @@ xelatex main
 
 ```text
 muc-thesis/
-├── main.tex              # 论文主入口（控制个人信息与章节调度）
-├── muc-thesis.cls        # 模板类定义（格式核心，定义字体/字号/间距）
-├── contents/             # [核心] 论文正文内容存放目录
-│   ├── abstract.tex      # 中英文摘要
-│   ├── 01-introduction.tex # 第一章：绪论与排版示例
-│   ├── 02-references-usage.tex # 第二章：参考文献使用教程
-│   ├── 03-usage-guide.tex # 第三章：模板使用指南（推荐阅读）
-│   ├── 04-conclusion.tex # 第四章：论文总结与展望
-│   └── acknowledgements.tex # 致谢
-├── references.bib        # 参考文献数据库（BibTeX 格式）
-├── figures/              # 图片资源存放目录（自动检索路径）
-└── frontmatter/          # 存放任务书、授权书等附件
+├── main.tex                        # 论文主入口（控制个人信息与章节调度）
+├── muc-thesis.cls                  # 模板类定义（格式核心，定义字体/字号/间距）
+├── contents/                       # [核心] 论文正文内容存放目录
+│   ├── abstract.tex                # 中英文摘要
+│   ├── 01-introduction.tex         # 第一章：绪论与排版示例
+│   ├── 02-references-usage.tex     # 第二章：参考文献使用教程
+│   ├── 03-usage-guide.tex          # 第三章：模板使用指南（推荐阅读）
+│   ├── 04-conclusion.tex           # 第四章：论文总结与展望
+│   └── acknowledgements.tex        # 致谢
+├── references.bib                  # 参考文献数据库（BibTeX 格式）
+├── figures/                        # 图片资源存放目录（自动检索路径）
+└── frontmatter/                    # 存放任务书、授权书等附件（若学院需要）
 ```
 
 ## 快速上手

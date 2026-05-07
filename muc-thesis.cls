@@ -235,7 +235,7 @@
   \noindent
   \zihao{5}\songti
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.0cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.0cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.6cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{2.5cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
     \hline
     学\hspace{1em}院 & \muc@college & 专\hspace{1em}业 & \muc@major \\ \hline
     年\hspace{1em}级 & \muc@grade   & 学\hspace{1em}号 & \muc@studentid \\ \hline

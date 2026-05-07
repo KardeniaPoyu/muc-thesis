@@ -71,7 +71,7 @@
 \subsection{图片插入规范}
 如图~\ref{fig:logo} 所示，根据规范，图题应置于图片的下方。建议在 `figure` 环境中使用 `[htbp]` 参数，以便 \LaTeX{} 自动寻找最美观的浮动位置。
 
-\begin{figure}[htbp]
+\begin{figure}[htbp] % h:当前位置, t:页顶, b:页底, p:独立一页。LaTeX 将自动寻找最美观位置。
   \centering
   \includegraphics[width=0.72\textwidth]{image1.png}
   \caption{中央民族大学校名与校标示例}
@@ -81,7 +81,7 @@
 \subsection{三线表制作}
 如表~\ref{tab:example} 所示，学术论文推荐使用“三线表”。本模板已内置 \texttt{booktabs} 宏包，通过 \texttt{\textbackslash toprule}、\texttt{\textbackslash midrule} 和 \texttt{\textbackslash bottomrule} 指令可绘制出粗细不一、极具质感的专业横线。
 
-\begin{table}[htbp]
+\begin{table}[htbp] % [htbp] 参数含义同上，建议保留以获得最佳排版效果
   \centering
   \caption{学术规范三线表示例}
   \label{tab:example}

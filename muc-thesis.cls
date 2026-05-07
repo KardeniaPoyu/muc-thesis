@@ -222,6 +222,7 @@
     \end{tabular}
     \vfill
     {\zihao{-3}\fangsong \@date\par}
+    \vspace{1.5cm}
   \end{titlepage}
   \clearpage
 }

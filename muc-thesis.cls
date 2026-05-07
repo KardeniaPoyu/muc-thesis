@@ -39,25 +39,18 @@
 \setsansfont{Times New Roman}
 \setmonofont{Courier New}
 
-% 字体自动降级逻辑：优先使用 Windows 字体，若不存在则降级为 Fandol
+% 字体处理：仅在 Windows 环境下强制指定宋体系列，其他环境（如 Linux/CI）交由 ctex 自动处理
 \IfFontExistsTF{SimSun}{
   \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
   \setCJKsansfont{SimHei}
   \setCJKmonofont{FangSong}
-}{
-  \setCJKmainfont{FandolSong-Regular.otf}[
-    BoldFont = FandolHei-Regular.otf,
-    ItalicFont = FandolKai-Regular.otf
-  ]
-  \setCJKsansfont{FandolHei-Regular.otf}
-  \setCJKmonofont{FandolFang-Regular.otf}
-}
+}{}
 
-% 定义小标宋，若不存在则降级为黑体
+% 定义小标宋，若不存在则降级为黑体或加粗
 \IfFontExistsTF{方正小标宋简体}{
   \newCJKfontfamily\xiaobiaosong{方正小标宋简体}
 }{
-  \let\xiaobiaosong\heiti 
+  \let\xiaobiaosong\heiti
 }
 
 \AtBeginDocument{%

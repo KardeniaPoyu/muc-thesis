@@ -1,0 +1,42 @@
+{
+  "name": "MUC Thesis Environment",
+  "image": "qmcgaw/latexdevcontainer:latest-full",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "formulahendry.code-runner",
+        "valentjn.vscode-ltex",
+        "ms-ceintl.vscode-language-pack-zh-hans"
+      ],
+      "settings": {
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.latex.recipe.default": "xe->bib->xe->xe",
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "xe->bib->xe->xe",
+            "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+          }
+        ],
+        "latex-workshop.latex.tools": [
+          {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "biber",
+            "command": "biber",
+            "args": ["%DOCFILE%"]
+          }
+        ]
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}

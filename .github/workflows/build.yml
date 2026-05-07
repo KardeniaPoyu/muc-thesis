@@ -1,0 +1,21 @@
+name: Build Thesis PDF
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -file-line-error"
+          # 自动处理参考文献 biber
+          latexmk_use_xelatex: true
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: thesis-pdf
+          path: main.pdf

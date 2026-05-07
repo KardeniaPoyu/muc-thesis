@@ -167,7 +167,11 @@
 \renewcommand{\cftsubsecpagefont}{\songti\zihao{5}}
 
 % Remove bold for chapters in TOC
+% 强制设定所有层级的引导点密度（数值越小越密）
+\renewcommand{\cftdotsep}{0.1}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
 
 \let\oldtableofcontents\tableofcontents
 \renewcommand{\tableofcontents}{%
@@ -191,7 +195,7 @@
       \vspace{-1.5cm}
     }
     {\heiti\zihao{0}\muc@covercategory\par}
-    \vspace{0.8cm}
+    \vspace{2.5cm}
     
     {\zihao{1}\heiti 题目：\underline{\makebox[12cm][c]{\@title}}\par}
     \ifstrempty{\muc@subtitle}{}{%
@@ -199,7 +203,7 @@
       {\zihao{1}\heiti \hspace{3em}\underline{\makebox[12cm][c]{\muc@subtitle}}\par}
     }
     
-    \vspace{0.6cm}
+    \vspace{0.5cm}
     \renewcommand{\arraystretch}{1.5}
     \zihao{-3}\fangsong
     \begin{tabular}{@{}l@{\hspace{1em}}c@{}}
@@ -291,11 +295,11 @@
   \begin{center}
     {\heiti\zihao{3} \@title}
   \end{center}
-  \vspace{1.5em}
+  \vspace{-1.5em}          % <--- 这里设为负值，将“摘要”字样向上拉
   \begin{center}
     {\heiti\zihao{4} 摘\hspace{2em}要}
   \end{center}
-  \vspace{0.5em}
+  \vspace{-0.5em}          % <--- 进一步缩小摘要字样与正文的间距
   \zihao{5}\songti
 }{
   \par\vspace{2em}
@@ -309,11 +313,11 @@
   \begin{center}
     {\bfseries\rmfamily\zihao{3} \muc@entitle}
   \end{center}
-  \vspace{1.5em}
+  \vspace{-1.5em}          % <--- 这里设为负值，将 Abstract 向上拉
   \begin{center}
     {\bfseries\rmfamily\zihao{3} Abstract}
   \end{center}
-  \vspace{0.5em}
+  \vspace{-0.5em}          % <--- 缩小 Abstract 与正文的间距
   \zihao{5}\rmfamily
 }{
   \par\vspace{2em}

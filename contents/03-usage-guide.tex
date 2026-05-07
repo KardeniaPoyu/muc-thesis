@@ -1,0 +1,28 @@
+\chapter{模板使用指南}
+
+\section{修改个人信息}
+你需要打开主文件 \texttt{main.tex}，在导言区（\texttt{\textbackslash begin\{document\}} 之前）修改以下命令：
+\begin{itemize}
+    \item \texttt{\textbackslash title\{...\}}：论文中文题目。
+    \item \texttt{\textbackslash author\{...\}}：你的姓名。
+    \item \texttt{\textbackslash studentid\{...\}}：学号。
+    \item \texttt{\textbackslash college\{...\}}：学院（如理学院）。
+    \item \texttt{\textbackslash major\{...\}}：专业。
+    \item \texttt{\textbackslash supervisor\{...\}}：指导教师姓名。
+\end{itemize}
+
+\section{章节与段落写作建议}
+
+\subsection{如何增加新章节}
+建议在 \texttt{contents/} 目录下新建 \texttt{.tex} 文件，例如 \texttt{05-new-chapter.tex}。然后在 \texttt{main.tex} 中使用 \texttt{\textbackslash include\{contents/05-new-chapter\}} 引入。
+
+\subsection{段落写作规范}
+\begin{enumerate}
+    \item \textbf{首行缩进}：中文会首行自动缩进。你只需要正常撰写，换行时空一行即可开始新段落。
+    \item \textbf{强调文本}：使用 \texttt{\textbackslash textbf\{粗体\}} 或 \texttt{\textbackslash textit\{斜体\}}。
+    \item \textbf{列表环境}：
+        \begin{itemize}
+            \item \texttt{itemize} 用于无序列表（如本列表）。
+            \item \texttt{enumerate} 用于有序列表（自动生成 1, 2, 3）。
+        \end{itemize}
+\end{enumerate}

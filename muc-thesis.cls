@@ -112,6 +112,7 @@
     format = \heiti\zihao{3}\centering,
     name = {,},
     number = \arabic{chapter},
+    aftername = \hspace{0.5em},
     beforeskip = 12pt,
     afterskip = 18pt,
     fixskip = true

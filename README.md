@@ -60,6 +60,33 @@ xelatex main
 
 ---
 
+## 项目结构说明
+
+
+```text
+muc-thesis/
+├── main.tex              # 论文主入口（控制个人信息与章节调度）
+├── muc-thesis.cls        # 模板类定义（格式核心，定义字体/字号/间距）
+├── contents/             # [核心] 论文正文内容存放目录
+│   ├── abstract.tex      # 中英文摘要
+│   ├── 01-introduction.tex # 第一章：绪论与排版示例
+│   ├── 02-references-usage.tex # 第二章：参考文献使用教程
+│   ├── 03-usage-guide.tex # 第三章：模板使用指南（推荐阅读）
+│   ├── 04-conclusion.tex # 第四章：论文总结与展望
+│   └── acknowledgements.tex # 致谢
+├── references.bib        # 参考文献数据库（BibTeX 格式）
+├── figures/              # 图片资源存放目录（自动检索路径）
+└── frontmatter/          # 存放任务书、授权书等附件
+```
+
+## 快速上手
+
+
+1. **修改个人信息**：打开 `main.tex`，在导言区修改 `\title`、`\author`、`\studentid` 等个人信息。
+2. **撰写正文**：直接在 `contents/` 目录下对应的章节文件中编写文字。
+3. **增加章节**：在 `contents/` 新建 `.tex` 文件，并在 `main.tex` 中通过 `\include{contents/文件名}` 引入。
+4. **管理图片**：将所有图片放入 `figures/` 文件夹，正文中直接引用文件名即可。
+
 ## 模板参数
 
 本模板基于 `ctexbook` 文档类，经过深度定制，能够自动处理封面、任务书、摘要、目录、图表编号及参考文献格式。
@@ -82,23 +109,8 @@ xelatex main
 *   **灵活插入**：提供 `\insertfrontpdf{...}` 命令，方便一键插入已签字的任务书、承诺书等不计入查重的文件。
 
 
-
-## 项目结构说明
-
-
-```text
-muc-thesis/
-├── main.tex              # 论文主文件（在此编写内容）
-├── muc-thesis.cls        # 模板类定义（格式核心）
-├── references.bib        # 参考文献数据库
-├── figures/              # 图片资源存放目录
-└── frontmatter/          # 存放任务书、授权书等附件（若需要）
-```
-
-
-
-
 ## 备注
+
 
 > [!IMPORTANT]
 > **任务书、学术诚信书、使用授权书**的标题默认采用 **方正小标宋简体二号** 字。
@@ -106,9 +118,8 @@ muc-thesis/
 > 如果您的学院没有特别要求，则默认使用该模板即可。
 
 
-
-
 ## 错误反馈与改进
+
 
 1. **格式核查**：如果您在使用过程中发现任何与学院/学校最新要求的格式不符之处，欢迎通过 Issue 反馈。
 2. **贡献代码**：欢迎发起 Pull Request。如果您想加入维护，请通过 Email 联系项目维护者。

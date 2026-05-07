@@ -1,6 +1,6 @@
 # 中央民族大学本科毕业论文 $\LaTeX$ 模板 
 
-本项目旨在为中央民族大学（MUC）本科生提供一个符合学校规范、专业且易用的 $\LaTeX$ 毕业论文模板。
+一个符合中央民族大学学校规范、专业且易用的 $\LaTeX$ 本科生毕业论文模板。
 
 模板参考了word版本的`【毕业论文模板】-2025年11月发布.doc`，全学院通用。
 
@@ -8,7 +8,7 @@
 
 ### 如何使用
 
-### overleaf 编辑（在线）
+### overleaf 编辑（在线 & 推荐）
 
 本模板可以使用 [overleaf](https://www.overleaf.com/) 在线编辑，需要在 [releases](https://github.com/wu-kan/muc-thesis/releases) 页面提前下载 `Source code (zip)`。
 
@@ -47,9 +47,7 @@
 您需要安装 [TeX Live](https://www.tug.org/texlive/) (>= 2020) 或 [MiKTeX](https://miktex.org/) 环境。
 
 **编译命令：**
-
-在终端执行：
-
+建议使用编辑器自带的编译按钮，或在终端执行：
 ```bash
 xelatex main
 biber main

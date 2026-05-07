@@ -35,7 +35,7 @@
 > [!IMPORTANT]
 > 无论是本地还是在线编辑，都需要首先创建自己的论文仓库，在自己的仓库进行修改，并建议及时 `commit & push` 到远程仓库进行备份。
 
-本模板提供了 [VS Code Remote - Containers](https://code.visualstudio.com/docs/remote/containers) 相关配置文件，包含了 texlive 2022 和 VS Code 中文和 LaTeX Workshop 插件，可用于本地或在线容器化编辑。
+本模板提供完整的 [VS Code Dev Containers](https://code.visualstudio.com/docs/remote/containers) 容器化配置。内部封装了最新版 TeX Live 环境，并自动安装 LaTeX Workshop 与中文语言包插件。无论是在本地使用 Docker 还是通过 GitHub Codespaces，均可实现免配环境、开箱即用。
 
 * 对于在线编辑，可以使用 [GitHub Codespaces](https://github.com/features/codespaces) 通过浏览器版本的 VS Code 进行编辑。（请注意，GitHub Codespaces 每月免费额度有限，请注意用量）。
 * 而对于本地编辑，需要安装 Docker 和 VS Code，并在 VS Code 中安装 [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 插件。随后打开本仓库，键入 `F1`，选择 `Remote-Containers: Reopen in Container` 即可构建进入容器环境。

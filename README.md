@@ -8,7 +8,7 @@
 
 ### 如何使用
 
-### overleaf 编辑（在线）
+### overleaf 编辑（在线 & 推荐）
 
 本模板可以使用 [overleaf](https://www.overleaf.com/) 在线编辑，需要在 [releases](https://github.com/wu-kan/muc-thesis/releases) 页面提前下载 `Source code (zip)`。
 

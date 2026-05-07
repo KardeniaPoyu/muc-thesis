@@ -10,12 +10,18 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          compiler: xelatex
-          args: "-interaction=nonstopmode -halt-on-error -file-line-error"
-          # 自动处理参考文献 biber
           latexmk_use_xelatex: true
+          args: "-interaction=nonstopmode -halt-on-error -file-line-error"
       - name: Upload PDF
         uses: actions/upload-artifact@v3
         with:
           name: thesis-pdf
           path: main.pdf
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: main.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

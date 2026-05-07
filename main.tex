@@ -52,11 +52,24 @@
 
 \chapter{绪论}
 
-\section{研究背景}
-这里填写正文内容。正文默认采用五号宋体、1.5 倍行距。英文和数字默认使用 Times New Roman。
+\section{模板简介}
+本模板（\texttt{muc-thesis}）旨在为中央民族大学（MUC）本科生提供一个符合学校最新排版规范、高度自动化且易于维护的 \LaTeX{} 毕业论文模板。
+
+相较于传统的 Word 排版，本模板通过底层宏包配置，彻底解决了多级标题缩进、公式排版对齐、图表浮动编号、以及参考文献格式不统一等常见痛点。
+
+写作者无需再将大量时间耗费在繁琐的格式微调上，可以全心专注于学术内容的创作。
+
+\section{编译与排版环境}
+为了正确渲染系统级中文字体（如宋体、黑体、方正小标宋等）并生成精准的交叉引用与目录，本模板强制依赖于 \textbf{XeLaTeX} 编译引擎。
+\begin{itemize}
+    \item \textbf{本地环境}：推荐使用完整版的 TeX Live 或 MiKTeX。标准编译链为 \texttt{xelatex} $\to$ \texttt{biber} $\to$ \texttt{xelatex} $\to$ \texttt{xelatex}。
+    \item \textbf{在线环境}：若使用 Overleaf 等在线编辑器，请务必进入项目设置（Menu），将 \texttt{Compiler} 引擎切换为 \texttt{XeLaTeX}，随后点击 \texttt{Recompile} 即可由平台自动完成复杂的编译流程。
+\end{itemize}
 
 \section{图表示例}
-如图~\ref{fig:logo} 所示，图题位于图下方。
+
+\subsection{图片插入规范}
+如图~\ref{fig:logo} 所示，根据规范，图题应置于图片的下方。建议在 `figure` 环境中使用 `[htbp]` 参数，以便 \LaTeX{} 自动寻找最美观的浮动位置。
 
 \begin{figure}[htbp]
   \centering
@@ -65,34 +78,80 @@
   \label{fig:logo}
 \end{figure}
 
-如表~\ref{tab:example} 所示，表题位于表上方。
+\subsection{三线表制作}
+如表~\ref{tab:example} 所示，学术论文推荐使用“三线表”。本模板已内置 \texttt{booktabs} 宏包，通过 \texttt{\textbackslash toprule}、\texttt{\textbackslash midrule} 和 \texttt{\textbackslash bottomrule} 指令可绘制出粗细不一、极具质感的专业横线。
 
 \begin{table}[htbp]
   \centering
-  \caption{示例表格}
+  \caption{学术规范三线表示例}
   \label{tab:example}
-  \begin{tabular}{ccc}
+  \begin{tabular}{lllc}
     \toprule
-    列 1 & 列 2 & 列 3 \\
+    指标分类 & 关键参数 & 实验备注 & 测量结果 \\
     \midrule
-    A & B & C \\
-    1 & 2 & 3 \\
+    基础参数 & 温度 ($^\circ$C) & 室内恒温环境 & 25.5 \\
+    环境参数 & 湿度 (\%) & 相对湿度采样 & 60.0 \\
+    物理特性 & 压力 (Pa) & 标准大气压强 & 101325 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
+\textbf{表格技巧：}
+\begin{itemize}
+    \item \textbf{表题位置}：注意表格的 \texttt{\textbackslash caption} 必须写在 \texttt{tabular} 环境的上方。
+    \item \textbf{列对齐}：在 \texttt{tabular} 参数中，\texttt{l} 代表左对齐，\texttt{c} 代表居中，\texttt{r} 代表右对齐。
+    \item \textbf{自适应宽度}：如果表格内容极多，可以使用模板内置的 \texttt{tabularx} 环境实现自动换行。
+\end{itemize}
+
 \section{公式示例}
-公式按章编号，例如式~\eqref{eq:einstein}。
+根据学校规范，公式应按章编号（例如式~\eqref{eq:quadratic}）。在 Word 中需要繁琐的 MathType 设置和 Tab 键对齐，而在 \LaTeX{} 中这一切都是自动完成的。
 
 \begin{equation}
-E = mc^2
-\label{eq:einstein}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \sqrt{b^2 - 4ac} \lim_{x \to \infty}
+  \label{eq:quadratic}
 \end{equation}
 
+再如组合数公式~\eqref{eq:combination}：
+
+\begin{equation}
+  \frac{n!}{r!(n-r)!}
+  \label{eq:combination}
+\end{equation}
+
+\textbf{使用要点：}
+\begin{itemize}
+    \item \textbf{环境选择}：请使用 \texttt{equation} 环境编写单行有编号公式。
+    \item \textbf{自动编号}：无需手动输入编号，模板已配置为按章编号，格式为 (章-序号)。
+    \item \textbf{字体一致性}：模板默认使用 Times New Roman 风格的数学字体，无需手动设置。
+    \item \textbf{交叉引用}：使用 \texttt{\textbackslash label} 标记，\texttt{\textbackslash eqref} 引用。引用会自动带上圆括号，且编号会随顺序调整自动更新。
+\end{itemize}
+
 \chapter{参考文献与交叉引用}
-正文中可直接引用文献\cite{muc-guideline,lamport1994latex}。
+
+\section{文献引用方法}
+在常规文本处理软件（如 Word）中，通常从学术检索平台复制预设格式的文本。但在 \LaTeX{} 系统中，该流程被标准化为数据驱动的模式：
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image4.png}
+    \caption{学术检索平台中文献引用接口示意图}
+    \label{fig:baidu-scholar}
+  \end{figure}
+
+  \begin{enumerate}
+    \item \textbf{数据提取}：如图~\ref{fig:baidu-scholar} 所示，应忽略顶部的格式化文本，选择底部的 \texttt{BibTeX} 导出项，获取结构化代码。
+    \item \textbf{数据库维护}：将获取的结构化数据增补至项目根目录下的 \texttt{references.bib} 文件。
+    \item \textbf{逻辑引用}：调用 \texttt{\textbackslash cite\{ID\}} 指令实现正文与数据库的关联。例如引用 Transformer 相关研究：\,\cite{transformer}。
+\end{enumerate}
 
 \backmatter
+\nocite{*} % 强制显示所有参考文献条目，无论正文是否引用
 \printbibliography[heading=bibintoc,title={参考文献}]
+
+\begin{acknowledgements}
+
+此处可以将你在做毕业论文（设计）的感受写上，特别是致谢，如：“感谢我的指导老师、我的父母、我的同学，以及所有帮助过我的人们，没有他们我是无法我的毕业论文的，谢谢”。
+
+\end{acknowledgements}
 
 \end{document}

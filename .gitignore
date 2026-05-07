@@ -1,0 +1,23 @@
+# LaTeX artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.pdf
+*.run.xml
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# OS temporary files
+.DS_Store
+Thumbs.db
+
+# Other
+main_copy.*
+*.latex
+vertopal_*
+media/

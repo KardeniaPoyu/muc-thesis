@@ -1,7 +1,5 @@
 # 中央民族大学本科毕业论文 $\LaTeX$ 模板 
 
-![模板预览图](figures/preview.png)
-
 本项目旨在为中央民族大学（MUC）本科生提供一个符合学校规范、专业且易用的 $\LaTeX$ 毕业论文模板。
 
 模板参考了word版本的`【毕业论文模板】-2025年11月发布.doc`，全学院通用。
@@ -49,7 +47,9 @@
 您需要安装 [TeX Live](https://www.tug.org/texlive/) (>= 2020) 或 [MiKTeX](https://miktex.org/) 环境。
 
 **编译命令：**
-建议使用编辑器自带的编译按钮，或在终端执行：
+
+在终端执行：
+
 ```bash
 xelatex main
 biber main

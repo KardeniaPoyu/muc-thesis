@@ -19,8 +19,9 @@
 \RequirePackage{tocloft}
 \RequirePackage{pdfpages}
 \RequirePackage[hidelinks]{hyperref}
-\RequirePackage[backend=biber,style=gb7714-2015]{biblatex}
+\RequirePackage[backend=biber,style=gb7714-2015,doi=false,isbn=false,url=false]{biblatex}
 \RequirePackage{tabularx}
+\RequirePackage{indentfirst}
 
 \geometry{
   a4paper,
@@ -37,14 +38,26 @@
 \setmainfont{Times New Roman}
 \setsansfont{Times New Roman}
 \setmonofont{Courier New}
-\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}
-% Define xiaobiaosong with fallback
+
+% 字体自动降级逻辑：优先使用 Windows 字体，若不存在则降级为 Fandol
+\IfFontExistsTF{SimSun}{
+  \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+  \setCJKsansfont{SimHei}
+  \setCJKmonofont{FangSong}
+}{
+  \setCJKmainfont{FandolSong-Regular.otf}[
+    BoldFont = FandolHei-Regular.otf,
+    ItalicFont = FandolKai-Regular.otf
+  ]
+  \setCJKsansfont{FandolHei-Regular.otf}
+  \setCJKmonofont{FandolFang-Regular.otf}
+}
+
+% 定义小标宋，若不存在则降级为黑体
 \IfFontExistsTF{方正小标宋简体}{
   \newCJKfontfamily\xiaobiaosong{方正小标宋简体}
 }{
-  \let\xiaobiaosong\heiti % Fallback to Heiti if missing
+  \let\xiaobiaosong\heiti 
 }
 
 \AtBeginDocument{%
@@ -106,14 +119,14 @@
     format = \heiti\zihao{3}\centering,
     name = {,},
     number = \arabic{chapter},
-    beforeskip = 0.5\baselineskip,
-    afterskip = 2\baselineskip,
+    beforeskip = 12pt,
+    afterskip = 18pt,
     fixskip = true
   },
   section = {
     format = \heiti\zihao{4},
-    beforeskip = 24pt,
-    afterskip = 18pt,
+    beforeskip = 18pt,
+    afterskip = 12pt,
     fixskip = true
   },
   subsection = {
@@ -203,7 +216,7 @@
       {\zihao{1}\heiti \hspace{3em}\underline{\makebox[12cm][c]{\muc@subtitle}}\par}
     }
     
-    \vspace{0.5cm}
+    \vspace{1.5cm}
     \renewcommand{\arraystretch}{1.5}
     \zihao{-3}\fangsong
     \begin{tabular}{@{}l@{\hspace{1em}}c@{}}
@@ -229,11 +242,11 @@
   \noindent
   \zihao{5}\songti
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.8cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.8cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.0cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|>{\centering\arraybackslash\fangsong\zihao{4}}m{3.0cm}|>{\centering\arraybackslash\fangsong\zihao{4}}X|}
     \hline
     学\hspace{1em}院 & \muc@college & 专\hspace{1em}业 & \muc@major \\ \hline
     年\hspace{1em}级 & \muc@grade   & 学\hspace{1em}号 & \muc@studentid \\ \hline
-    姓\hspace{1em}名 & \@author     & 起止时间 & \rmfamily\zihao{-4} 2026.10.15--2027.4.20 \\ \hline
+    姓\hspace{1em}名 & \@author     & 起止时间 & \rmfamily\zihao{4} \mbox{2026.10.15--2027.4.20} \\ \hline
     指导教师姓名 & \muc@supervisor & 职\hspace{1em}称 & \\ \hline
     题\hspace{1em}目 & \multicolumn{3}{l|}{\fangsong\zihao{4} \@title} \\ \hline
     \multicolumn{4}{|>{\fangsong\zihao{4}}l|}{目的} \\ \hline
@@ -301,6 +314,8 @@
   \end{center}
   \vspace{-0.5em}          % <--- 进一步缩小摘要字样与正文的间距
   \zihao{5}\songti
+  \setlength{\parindent}{2\ccwd}
+  \hspace*{2\ccwd}\ignorespaces
 }{
   \par\vspace{2em}
   \noindent{\heiti\zihao{-4} 关键词：}\muc@keywordsCN
@@ -319,6 +334,8 @@
   \end{center}
   \vspace{-0.5em}          % <--- 缩小 Abstract 与正文的间距
   \zihao{5}\rmfamily
+  \setlength{\parindent}{2em}
+  \hspace*{2em}\ignorespaces
 }{
   \par\vspace{2em}
   \noindent{\bfseries\rmfamily\zihao{-4} Keywords: }\muc@keywordsEN

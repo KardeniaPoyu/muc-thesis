@@ -331,4 +331,13 @@
   \cleardoublepage
 }
 
+\newenvironment{acknowledgements}{
+  \cleardoublepage
+  \chapter*{致\hspace{2em}谢}
+  \addcontentsline{toc}{chapter}{致谢}
+  \zihao{5}\songti
+}{
+  \cleardoublepage
+}
+
 \makeatother

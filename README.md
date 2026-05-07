@@ -46,6 +46,8 @@
 
 您需要安装 [TeX Live](https://www.tug.org/texlive/) (>= 2020) 或 [MiKTeX](https://miktex.org/) 环境。
 
+若使用 VS Code ，也可安装 **LaTeX Workshop** 插件。插件会自动识别项目中的 `latexmk` 配置或内置 Recipe。点击侧边栏 `TEX` -> `Build LaTeX project` 即可。
+
 **编译命令：**
 建议使用编辑器自带的编译按钮，或在终端执行：
 ```bash

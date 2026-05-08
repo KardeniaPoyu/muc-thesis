@@ -24,6 +24,8 @@
 
 此时可以得到完整的 `main.pdf` 文件。
 
+* ⚠️ 由于 Overleaf 将免费账户的超时时间缩短到 20 秒，因此如果您在使用免费账户，可能无法成功完成项目的编译。[Overleaf 官方声明](https://www.google.com/search?q=https://www.overleaf.com/blog/compilation-timeout-standardization-on-overleaf)
+
 ### GitHub Actions 自动构建（在线）
 
 点击 [Use this template](https://github.com/KardeniaPoyu/muc-thesis/generate) 创建自己的论文仓库（推荐创建为私有仓库），随后直接在自己的仓库进行修改，随后 GitHub Actions 会自动进行构建，可在 Actions 中下载对应 artifact。

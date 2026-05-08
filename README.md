@@ -3,9 +3,10 @@
 一个符合中央民族大学学校规范、专业且易用的 LaTeX 本科生毕业论文模板。
  
 <p align="center">
-  <img src="./figures/preview1.png" width="260" />
-  <img src="./figures/preview2.png" width="260" />
-  <img src="./figures/preview3.png" width="260" />
+  <img src="./figures/preview1.png" width="190" />
+  <img src="./figures/preview2.png" width="190" />
+  <img src="./figures/preview3.png" width="190" />
+  <img src="./figures/preview4.png" width="190" />
 </p>
 
 模板参考了 Word 版本的 [【毕业论文模板】-2025年11月理学院发布.doc](./docs/【毕业论文模板】-2025年11月理学院发布.doc)，适用于大部分学院通用要求。

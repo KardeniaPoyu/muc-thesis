@@ -95,7 +95,6 @@ muc-thesis/
 ├── references.bib                  # 参考文献数据库（BibTeX 格式）
 ├── figures/                        # 图片资源存放目录（自动检索路径）
 ├── docs/                           # 存放参考规范和原始 Word 模板
-└── frontmatter/                    # 存放任务书、授权书等附件（若学院需要）
 ```
 
 ## 快速上手

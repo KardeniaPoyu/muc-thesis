@@ -26,3 +26,11 @@
             \item \texttt{enumerate} 用于有序列表（自动生成 1, 2, 3）。
         \end{itemize}
 \end{enumerate}
+
+\section{Overleaf 编译超时解决方法}
+若在 Overleaf 中遇到编译超时（Timeout），可尝试以下方案：
+\begin{enumerate}
+    \item \textbf{局部编译}：在 \texttt{main.tex} 导言区使用 \texttt{\textbackslash includeonly\{contents/正在写的章节\}}。
+    \item \textbf{草稿模式}：将 \texttt{\textbackslash documentclass} 改为 \texttt{\textbackslash documentclass[draft]\{muc-thesis\}}，可跳过图片渲染。
+    \item \textbf{优化图片}：确保 \texttt{figures/} 下的图片单张大小不超过 1MB，推荐使用 PDF 或压缩后的 PNG。
+\end{enumerate}

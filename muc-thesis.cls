@@ -92,19 +92,21 @@
 
 \newcommand{\muc@fillline}[1]{\underline{\makebox[8.2cm][c]{#1}}}
 
-% Header and Footer
-\pagestyle{fancy}
+% 统一页眉页脚配置
 \fancyhf{}
 \fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业论文(设计)}
 \fancyfoot[C]{\zihao{-5}\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
+% 确保 plain 样式（章节首页）也有一致的页眉
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业论文(设计)}
   \fancyfoot[C]{\zihao{-5}\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
 }
+
+\pagestyle{fancy}
 
 % Fonts and Styles
 \ctexset{
@@ -179,14 +181,6 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
-
-\let\oldtableofcontents\tableofcontents
-\renewcommand{\tableofcontents}{%
-  \cleardoublepage
-  \pagestyle{fancy}
-  \oldtableofcontents
-  \cleardoublepage
-}
 
 \newcommand{\makemuctableofcontents}{%
   \tableofcontents

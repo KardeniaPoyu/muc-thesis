@@ -1,8 +1,14 @@
 # 中央民族大学本科毕业论文 $\LaTeX$ 模板 
 
 一个符合中央民族大学学校规范、专业且易用的 LaTeX 本科生毕业论文模板。
+ 
+<p align="center">
+  <img src="./figures/preview1.png" width="260" />
+  <img src="./figures/preview2.png" width="260" />
+  <img src="./figures/preview3.png" width="260" />
+</p>
 
-模板参考了word版本的`【毕业论文模板】-2025年11月发布.doc`，所有学院通用。
+模板参考了 Word 版本的 [【毕业论文模板】-2025年11月理学院发布.doc](./docs/【毕业论文模板】-2025年11月理学院发布.doc)，适用于大部分学院通用要求。
 
 ---
 
@@ -49,7 +55,16 @@
 您需要安装 [TeX Live](https://www.tug.org/texlive/) (>= 2020) 或 [MiKTeX](https://miktex.org/) 环境。
 
 **编译命令：**
+
+按照以下顺序完整运行一遍编译链：
+
+1.  **`xelatex main`** （生成辅助文件）
+2.  **`biber main`** （处理参考文献数据）
+3.  **`xelatex main`** （将文献写入正文）
+4.  **`xelatex main`** （更新引用编号和目录）
+
 建议使用编辑器自带的编译按钮，或在终端执行：
+
 ```bash
 xelatex main
 biber main
@@ -78,6 +93,7 @@ muc-thesis/
 │   └── acknowledgements.tex        # 致谢
 ├── references.bib                  # 参考文献数据库（BibTeX 格式）
 ├── figures/                        # 图片资源存放目录（自动检索路径）
+├── docs/                           # 存放参考规范和原始 Word 模板
 └── frontmatter/                    # 存放任务书、授权书等附件（若学院需要）
 ```
 
@@ -93,7 +109,7 @@ muc-thesis/
 
 本模板基于 `ctexbook` 文档类，经过深度定制，能够自动处理封面、任务书、摘要、目录、图表编号及参考文献格式。
 
-模板格式严格遵循《中央民族大学本科生毕业论文（设计）撰写规范》，主要参数如下：
+模板格式严格遵循 [【学校规定】中央民族大学本科生毕业论文（设计）撰写规范-修订了行间距.docx](./docs/【学校规定】中央民族大学本科生毕业论文（设计）撰写规范-修订了行间距.docx)，主要参数如下：
 
 *   **环境要求**：基于 `ctexbook` 文档类，必须使用 **XeLaTeX** 引擎编译。
 *   **页面布局**：

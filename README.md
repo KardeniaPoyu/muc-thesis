@@ -8,13 +8,13 @@
 
 ### 如何使用
 
-### overleaf 编辑（在线）
+### Overleaf 编辑（在线）
 
-本模板可以使用 [overleaf](https://www.overleaf.com/) 在线编辑，需要在 [releases](https://github.com/KardeniaPoyu/muc-thesis/releases) 页面提前下载 `Source code (zip)`。
+本模板可以使用 [Overleaf](https://www.overleaf.com/) 在线编辑，需要在 [releases](https://github.com/KardeniaPoyu/muc-thesis/releases) 页面提前下载 `Source code (zip)`。
 
 步骤如下：
 
-1. 进入 [overleaf](https://www.overleaf.com/) 并登录账号
+1. 进入 [Overleaf](https://www.overleaf.com/) 并登录账号
 2. 左侧 `New Project` 选择 `Upload Project`
 3. 上传 `.zip` 压缩包，建立新项目
 4. 点击 `menu`，滑动到下方 `Settings` 的 `Compiler` 选择 `XeLaTeX`

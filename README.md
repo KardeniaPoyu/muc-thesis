@@ -17,7 +17,7 @@
 
 ### Overleaf 编辑（在线）
 
-本模板可以使用 [Overleaf](https://www.overleaf.com/) 在线编辑，需要在 [releases](https://github.com/KardeniaPoyu/muc-thesis/releases) 页面提前下载 `Source code (zip)`。
+本模板可以使用 [Overleaf](https://www.overleaf.com/) 在线编辑，需要在 [Releases](https://github.com/KardeniaPoyu/muc-thesis/releases) 页面提前下载 `Source code (zip)`。
 
 步骤如下：
 
@@ -39,7 +39,7 @@
 
 点击 [Use this template](https://github.com/KardeniaPoyu/muc-thesis/generate) 创建自己的论文仓库（推荐创建为私有仓库），随后直接在自己的仓库进行修改，随后 GitHub Actions 会自动进行构建，可在 Actions 中下载对应 artifact。
 
-还可以使用 `git tag`，其会像本仓库一样将构建好的 artifact 永久发布到 [releases](https://github.com/KardeniaPoyu/muc-thesis/releases) 中。
+还可以使用 `git tag`，其会像本仓库一样将构建好的 artifact 永久发布到 [Releases](https://github.com/KardeniaPoyu/muc-thesis/releases) 中。
 
 ### Devcontainer 编辑（本地 & 在线）
 

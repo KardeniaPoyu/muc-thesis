@@ -13,7 +13,7 @@
 
 ---
 
-### 如何使用
+## 如何使用
 
 ### Overleaf 编辑（在线）
 
@@ -33,11 +33,7 @@
 
 * ⚠️ 由于 Overleaf 将免费账户的超时时间缩短到 20 秒，因此如果您在使用免费账户，可能无法成功完成项目的编译。[Overleaf 官方声明](https://www.google.com/search?q=https://www.overleaf.com/blog/compilation-timeout-standardization-on-overleaf)
 
-#### 小众Latex在线编译器推荐
-
-中科院中国科技云：[https://latex.cstcloud.cn](https://latex.cstcloud.cn)
-
-**不限**编译时长，**不限**checkpoint查看历史长度，**不限**同时协作人数，**免费**使用AI助手(默认模型是Qwen3.5-Next-80B，可以自己配置自己的API)，
+* 小众Latex在线编译器推荐：[中科院中国科技云](https://latex.cstcloud.cn)。**不限**编译时长，**不限**checkpoint查看历史长度，**不限**同时协作人数，**免费**使用AI助手(默认模型是Qwen3.5-Next-80B，可以自己配置自己的API)
 
 ### GitHub Actions 自动构建（在线）
 

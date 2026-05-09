@@ -46,34 +46,14 @@
   \setCJKmonofont{FangSong}
 }{}
 
-% 定义小标宋：优先系统字体，其次尝试项目内字体文件，最后降级为黑体
-\newif\ifmucxiaobiaosongloaded
-\newcommand{\muctryxiaobiaosongfile}[1]{%
-  \ifmucxiaobiaosongloaded\else
-    \IfFileExists{#1}{%
-      \newCJKfontfamily\xiaobiaosong{[#1]}%
-      \global\mucxiaobiaosongloadedtrue
-    }{}%
-  \fi
-}
-
-\IfFontExistsTF{方正小标宋简体}{
-  \newCJKfontfamily\xiaobiaosong{方正小标宋简体}
-}{
-  \IfFontExistsTF{方正小标宋简}{
-    \newCJKfontfamily\xiaobiaosong{方正小标宋简}
-  }{
-    \mucxiaobiaosongloadedfalse
-    \muctryxiaobiaosongfile{方正小标宋简.TTF}
-    \muctryxiaobiaosongfile{方正小标宋简.ttf}
-    \muctryxiaobiaosongfile{方正小标宋简.TTF.ttf}
-    \muctryxiaobiaosongfile{fonts/方正小标宋简.TTF}
-    \muctryxiaobiaosongfile{fonts/方正小标宋简.ttf}
-    \muctryxiaobiaosongfile{fonts/方正小标宋简.TTF.ttf}
-    \ifmucxiaobiaosongloaded\else
-      \let\xiaobiaosong\heiti
-    \fi
-  }
+% 定义小标宋：优先尝试项目内字体文件，否则降级为黑体
+\IfFileExists{方正小标宋简.ttf}{%
+  \newCJKfontfamily\xiaobiaosong[
+    Path = ./,
+    UprightFont = 方正小标宋简.ttf
+  ]{方正小标宋简}%
+}{%
+  \let\xiaobiaosong\heiti
 }
 
 \AtBeginDocument{%

@@ -72,6 +72,6 @@
     \item \textbf{自动编号}：无需手动输入编号，模板已配置为按章编号，格式为 (章-序号)。
     \item \textbf{字体一致性}：模板默认使用 Times New Roman 风格的数学字体，无需手动设置。
     \item \textbf{交叉引用}：使用 \texttt{\textbackslash label} 标记，\texttt{\textbackslash eqref} 引用。引用会自动带上圆括号，且编号会随顺序调整自动更新。
-    \item \textbf{行内公式}：行内公式可使用\texttt{$xxx$}或\texttt{\( xxx \)}包裹"xxx"，即需要被渲染的符号或短公式，注意该符号/公式不会被编号。
-    \item \textbf{小寄巧}：对于不熟悉Latex公式语法的同学，可以先在纸上手写需要的公式，然后使用带有**多模态理解**能力的AI产品（国产例如豆包/千问），让AI转化为Latex格式即可。
+    \item \textbf{行内公式}：在正文中嵌入数学符号或简短公式时，请使用 \texttt{\detokenize{$...$}} 或 \texttt{\detokenize{\(...\)}} 将具体公式内容包裹（例如 \texttt{\detokenize{$E=mc^2$}}，渲染后即$E=mc^2$）。此类公式会随当前段落文本流排版，且不会分配独立编号。
+    \item \textbf{小寄巧}：对于不熟悉Latex公式语法的同学，可以先在纸上手写需要的公式，然后使用带有\textbf{多模态理解}能力的AI产品（国产例如豆包/千问），让AI转化为Latex格式即可。
 \end{itemize}

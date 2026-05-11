@@ -93,7 +93,8 @@ muc-thesis/
 │   ├── 02-references-usage.tex     # 第二章：参考文献使用教程
 │   ├── 03-usage-guide.tex          # 第三章：模板使用指南（推荐阅读）
 │   ├── 04-conclusion.tex           # 第四章：论文总结与展望
-│   └── acknowledgements.tex        # 致谢
+│   ├── ai-tool-usage.tex           # 使用 AI 工具情况说明
+│   └── acknowledgements.tex        # 致谢  
 ├── references.bib                  # 参考文献数据库（BibTeX 格式）
 ├── figures/                        # 图片资源存放目录（自动检索路径）
 ├── docs/                           # 存放参考规范和原始 Word 模板
@@ -127,6 +128,7 @@ muc-thesis/
 *   **编号系统**：表、公式均实现**按章自动编号**，格式为“图 1-1”、“表 2-2”、“(3-1)”。
 *   **参考文献**：通过 `biblatex` 深度适配 `GB/T 7714-2015`（国标）样式。
 *   **灵活插入**：提供 `\insertfrontpdf{...}` 命令，方便一键插入已签字的任务书、承诺书等不计入查重的文件。
+*   **AI 使用声明**：提供 `\makeaipage` 命令，生成符合学校规范的“使用 AI 工具情况说明”页。
 
 
 ## 注意事项

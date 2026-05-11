@@ -103,11 +103,11 @@ muc-thesis/
 
 
 1. **修改个人信息**：打开 `main.tex`，在导言区修改 `\title`、`\author`、`\studentid`、`\college`、`\major`、`\supervisor` 等信息。**这些信息将自动同步填充到封面、任务书、学术诚信书、使用授权书及 AI 工具使用情况说明页中。**
-2. **撰写正文**：直接在 `contents/` 目录下对应的章节文件中编写文字。
-3. **设置电子签名（可选）**：如果您有签名图片，可以在导言区使用以下命令：
+2. **设置电子签名（可选）**：如果您有签名图片，可以在导言区使用以下命令：
    *   `\sigstudent[3cm]{figures/student-sign.png}` （设置学生签名，可调宽度）
    *   `\sigsupervisor[2.5cm]{figures/teacher-sign.png}` （设置老师签名）
    如果不设置，则默认显示空白横线供手动签字。
+3. **撰写正文**：直接在 `contents/` 目录下对应的章节文件中编写文字。
 4. **增加章节**：在 `contents/` 新建 `.tex` 文件，并在 `main.tex` 中通过 `\include{contents/文件名}` 引入。
 5. **管理图片**：将所有图片放入 `figures/` 文件夹，正文中直接引用文件名即可。
 

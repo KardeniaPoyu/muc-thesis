@@ -106,6 +106,7 @@ muc-thesis/
 2. **设置电子签名（可选）**：如果您有签名图片，可以在导言区使用以下命令：
    *   `\sigstudent[3cm]{figures/student-sign.png}` （设置学生签名，可调宽度）
    *   `\sigsupervisor[2.5cm]{figures/teacher-sign.png}` （设置老师签名）
+   
    如果不设置，则默认显示空白横线供手动签字。
 3. **撰写正文**：直接在 `contents/` 目录下对应的章节文件中编写文字。
 4. **增加章节**：在 `contents/` 新建 `.tex` 文件，并在 `main.tex` 中通过 `\include{contents/文件名}` 引入。

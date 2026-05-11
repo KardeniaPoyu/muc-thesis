@@ -1,0 +1,42 @@
+% Backup of the ai-tool-usage page logic
+\RequirePackage{makecell}
+
+\newcommand{\makeaipage}{%
+  \cleardoublepage
+  \thispagestyle{fancy}
+  \begin{center}
+    \xiaobiaosong\zihao{2} 关于使用 AI 工具情况的说明
+  \end{center}
+  \noindent
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{!{\vrule width 1.5pt}>{\centering\arraybackslash\fangsong\zihao{4}}m{3.6cm}!{\vrule width 0.4pt}>{\centering\arraybackslash\fangsong\zihao{4}}X!{\vrule width 0.4pt}>{\centering\arraybackslash\fangsong\zihao{4}}m{2.5cm}!{\vrule width 0.4pt}>{\centering\arraybackslash\fangsong\zihao{4}}X!{\vrule width 1.5pt}}
+    \Xhline{1.5pt}
+    学\hspace{1em}院 & \muc@college & 专\hspace{1em}业 & \muc@major \\ \Xhline{0.4pt}
+    学生姓名 & \@author & 学\hspace{1em}号 & \muc@studentid \\ \Xhline{0.4pt}
+    指导教师 & \muc@supervisor & & \\ \Xhline{0.4pt}
+    题\hspace{1em}目 & \multicolumn{3}{>{\fangsong\zihao{4}}l!{\vrule width 1.5pt}}{\@title} \\ \Xhline{0.4pt}
+    \begin{minipage}[c][9.0cm][c]{3.2cm}
+        \centering \fangsong\zihao{4} \begin{tabular}{c} 使用 AI 工具 \\ 情况的说明 \\ （可加页） \end{tabular}
+    \end{minipage} & \multicolumn{3}{>{\kaishu\zihao{5}\bfseries}m{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}!{\vrule width 1.5pt}}{
+        \begin{minipage}[t][9.0cm][t]{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}
+            说明：\par
+            1. 需列出所使用的 AI 工具相关信息，包括工具名称、开发者、版本、使用日期、使用方式等。\par
+            2. 须保留 AI 工具处理之前的相关重要材料，以备指导教师或评审专家对学生使用 AI 工具的检查或质询。\par
+        \end{minipage}
+    } \\ \Xhline{0.4pt}
+    \begin{minipage}[c][5.0cm][c]{3.2cm}
+        \centering \fangsong\zihao{4} \begin{tabular}{c} 学生 \\ 诚信声明 \end{tabular}
+    \end{minipage} & \multicolumn{3}{>{\kaishu\zihao{4}\bfseries}m{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}!{\vrule width 1.5pt}}{
+        \begin{minipage}[t][6.0cm][t]{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}
+            \hspace{2\ccwd}本人郑重声明，上述关于 AI 工具使用情况的陈述真实无误。本人深知学术诚信的重要性，如有任何隐瞒或虚假之处，愿承担学术不端行为带来的相关惩处。\par
+            \vspace{1.0cm}
+            \fangsong\zihao{4}\bfseries
+            \hfill 学生（签字）：\underline{\hspace{4cm}} \hspace{1.5cm} \null \par
+            \vfill
+            \hfill 202\hspace{1em}年\hspace{1.5em}月\hspace{1.5em}日 \hspace{1.5cm} \null \par
+            \vspace{0.1cm}
+        \end{minipage}
+    } \\ \Xhline{1.5pt}
+  \end{tabularx}
+  \cleardoublepage
+}

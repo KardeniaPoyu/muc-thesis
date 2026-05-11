@@ -93,8 +93,7 @@ muc-thesis/
 │   ├── 02-references-usage.tex     # 第二章：参考文献使用教程
 │   ├── 03-usage-guide.tex          # 第三章：模板使用指南（推荐阅读）
 │   ├── 04-conclusion.tex           # 第四章：论文总结与展望
-│   ├── ai-tool-usage.tex           # 使用 AI 工具情况说明
-│   └── acknowledgements.tex        # 致谢  
+│   └── acknowledgements.tex        # 致谢
 ├── references.bib                  # 参考文献数据库（BibTeX 格式）
 ├── figures/                        # 图片资源存放目录（自动检索路径）
 ├── docs/                           # 存放参考规范和原始 Word 模板

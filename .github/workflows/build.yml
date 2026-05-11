@@ -1,5 +1,6 @@
 name: Build Thesis PDF
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   build_latex:
     runs-on: ubuntu-latest

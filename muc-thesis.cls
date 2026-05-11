@@ -99,6 +99,37 @@
 \newcommand{\keywordsEN}[1]{\gdef\muc@keywordsEN{#1}}
 \newcommand{\subtitle}[1]{\gdef\muc@subtitle{#1}}
 
+% 电子签名处理逻辑
+\newcommand{\muc@sigstudentimage}{}
+\newcommand{\muc@sigstudentwidth}{2.5cm}
+\newcommand{\muc@sigsupervisorimage}{}
+\newcommand{\muc@sigsupervisorwidth}{2.5cm}
+
+\newcommand{\sigstudent}[2][2.5cm]{%
+  \gdef\muc@sigstudentwidth{#1}%
+  \gdef\muc@sigstudentimage{#2}%
+}
+\newcommand{\sigsupervisor}[2][2.5cm]{%
+  \gdef\muc@sigsupervisorwidth{#1}%
+  \gdef\muc@sigsupervisorimage{#2}%
+}
+
+\newcommand{\muc@printsigstudent}{%
+  \ifstrempty{\muc@sigstudentimage}{%
+    \underline{\hspace{4cm}}%
+  }{%
+    \smash{\raisebox{-0.2\height}{\includegraphics[width=\muc@sigstudentwidth]{\muc@sigstudentimage}}}%
+  }%
+}
+
+\newcommand{\muc@printsigsupervisor}{%
+  \ifstrempty{\muc@sigsupervisorimage}{%
+    \underline{\hspace{4cm}}%
+  }{%
+    \smash{\raisebox{-0.2\height}{\includegraphics[width=\muc@sigsupervisorwidth]{\muc@sigsupervisorimage}}}%
+  }%
+}
+
 \newcommand{\muc@fillline}[1]{\underline{\makebox[8.2cm][c]{#1}}}
 
 % 统一页眉页脚配置
@@ -255,7 +286,7 @@
     \multicolumn{4}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth}|}{\rule{0pt}{2cm}} \\ \hline
     \multicolumn{4}{|>{\fangsong\zihao{4}}l|}{文献查阅指引} \\ \hline
     \multicolumn{4}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth}|}{\rule{0pt}{2cm}} \\ \hline
-    指导教师（签名） & & 日\hspace{1em}期 & 202X.11.30 \\ \hline
+    指导教师（签名） & \muc@printsigsupervisor & 日\hspace{1em}期 & 202X.11.30 \\ \hline
   \end{tabularx}
   \cleardoublepage
 }
@@ -273,7 +304,7 @@
   \vspace{3cm}
   \begin{flushright}
     \zihao{-4}
-    承诺人签名：\underline{\hspace{4cm}} \par
+    承诺人签名：\muc@printsigstudent \par
     \vspace{0.5cm}
     日\hspace{2.5em}期：\underline{\makebox[4cm][c]{2026.4.20}} \par
   \end{flushright}
@@ -293,9 +324,9 @@
   \vspace{2cm}
   \begin{flushright}
     \zihao{-4}
-    本人签名：\underline{\hspace{4cm}} \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
+    本人签名：\muc@printsigstudent \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
     \vspace{1cm}
-    指导老师签名：\underline{\hspace{4cm}} \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
+    指导老师签名：\muc@printsigsupervisor \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
   \end{flushright}
   \cleardoublepage
 }
@@ -385,7 +416,7 @@
             \hspace{2\ccwd}本人郑重声明，上述关于 AI 工具使用情况的陈述真实无误。本人深知学术诚信的重要性，如有任何隐瞒或虚假之处，愿承担学术不端行为带来的相关惩处。\par
             \vspace{1.0cm}
             \fangsong\zihao{4}\bfseries
-            \hfill 学生（签字）：\underline{\hspace{4cm}} \hspace{1.5cm} \null \par
+            \hfill 学生（签字）：\muc@printsigstudent \hspace{1.5cm} \null \par
             \vfill
             \hfill 202\hspace{1em}年\hspace{1.5em}月\hspace{1.5em}日 \hspace{1.5cm} \null \par
             \vspace{0.1cm}

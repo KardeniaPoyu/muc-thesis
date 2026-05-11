@@ -46,11 +46,19 @@
   \setCJKmonofont{FangSong}
 }{}
 
-% 定义小标宋，若不存在则降级为黑体或加粗
-\IfFontExistsTF{方正小标宋简体}{
-  \newCJKfontfamily\xiaobiaosong{方正小标宋简体}
-}{
-  \let\xiaobiaosong\heiti
+% 定义小标宋：项目内字体 -> 系统字体 -> 黑体回退
+\IfFileExists{FZXBSJW.ttf}{%
+  \newCJKfontfamily\xiaobiaosong{FZXBSJW.ttf}[Path = ./]%
+}{%
+  \IfFontExistsTF{方正小标宋简体}{%
+    \newCJKfontfamily\xiaobiaosong{方正小标宋简体}
+  }{%
+    \IfFontExistsTF{方正小标宋简}{%
+      \newCJKfontfamily\xiaobiaosong{方正小标宋简}
+    }{%
+      \let\xiaobiaosong\heiti
+    }%
+  }%
 }
 
 \AtBeginDocument{%

@@ -20,7 +20,7 @@ jobs:
           latexmk_use_xelatex: true
           # 增加 -interaction=nonstopmode 忽略一些非致命字体错误
           # 增加 -file-line-error 方便定位报错行号
-          args: "-interaction=nonstopmode -halt-on-error -file-line-error -pdf -xe"
+          args: "-interaction=nonstopmode -halt-on-error -file-line-error"
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4

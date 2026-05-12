@@ -23,6 +23,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{indentfirst}
 \RequirePackage{makecell}
+\RequirePackage{xcolor}
 
 \geometry{
   a4paper,
@@ -36,9 +37,18 @@
   footskip=0.75cm
 }
 
-\setmainfont{Times New Roman}
-\setsansfont{Times New Roman}
-\setmonofont{Courier New}
+% 英文主字体处理
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \setsansfont{Times New Roman}
+}{
+  % Linux 环境回退到开源字体或保持默认
+}
+
+\IfFontExistsTF{Courier New}{
+  \setmonofont{Courier New}
+}{}
+
 
 % 字体处理：仅在 Windows 环境下强制指定宋体系列，其他环境（如 Linux/CI）交由 ctex 自动处理
 \IfFontExistsTF{SimSun}{
@@ -82,6 +92,7 @@
 \newcommand{\muc@coverlogo}{}
 \newcommand{\muc@covercategory}{本科毕业论文（设计）}
 \newcommand{\muc@subtitle}{}
+\newcommand{\muc@paperortype}{论文}
 \newcommand{\muc@keywordsCN}{}
 \newcommand{\muc@keywordsEN}{}
 
@@ -98,6 +109,41 @@
 \newcommand{\keywordsCN}[1]{\gdef\muc@keywordsCN{#1}}
 \newcommand{\keywordsEN}[1]{\gdef\muc@keywordsEN{#1}}
 \newcommand{\subtitle}[1]{\gdef\muc@subtitle{#1}}
+\newcommand{\paperortype}[1]{\gdef\muc@paperortype{#1}}
+
+% 红色、蓝色、高亮色提醒开关
+\newif\ifshowremarks
+\showremarkstrue
+\newcommand{\showremarks}{\showremarkstrue}
+\newcommand{\hideremarks}{\showremarksfalse}
+\newcommand{\remark}[1]{%
+  \ifshowremarks
+    {\color{red}\zihao{5}\songti #1}%
+  \fi
+}
+
+\newcommand{\blueremark}[1]{%
+  \ifshowremarks
+    {\color{blue}\zihao{5}\songti #1}%
+  \fi
+}
+
+\newcommand{\highlightremark}[1]{%
+  \ifshowremarks
+    \medskip
+    \noindent\colorbox{yellow}{%
+      \parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \hspace{2\ccwd}\color{red}\zihao{5}\songti #1%
+      }%
+    }\par\medskip
+  \fi
+}
+
+\newcommand{\inlinehighlight}[1]{%
+  \ifshowremarks
+    \colorbox{yellow}{\color{red}#1}%
+  \fi
+}
 
 % 电子签名处理逻辑
 \newcommand{\muc@sigstudentimage}{}
@@ -116,7 +162,7 @@
 
 \newcommand{\muc@printsigstudent}{%
   \ifdefempty{\muc@sigstudentimage}{%
-    \underline{\hspace{4cm}}%
+    \hspace{4cm}%
   }{%
     \smash{\raisebox{-0.2\height}{\includegraphics[width=\muc@sigstudentwidth]{\muc@sigstudentimage}}}%
   }%
@@ -124,7 +170,7 @@
 
 \newcommand{\muc@printsigsupervisor}{%
   \ifdefempty{\muc@sigsupervisorimage}{%
-    \underline{\hspace{4cm}}%
+    \hspace{4cm}%
   }{%
     \smash{\raisebox{-0.2\height}{\includegraphics[width=\muc@sigsupervisorwidth]{\muc@sigsupervisorimage}}}%
   }%
@@ -134,14 +180,21 @@
 
 % 统一页眉页脚配置
 \fancyhf{}
-\fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业论文(设计)}
+\fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业\muc@paperortype}
 \fancyfoot[C]{\zihao{-5}\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
+
+% 摘要页样式：无页眉，页脚显示罗马数字页码
+\fancypagestyle{abstract}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\zihao{-5}\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
 
 % 确保 plain 样式（章节首页）也有一致的页眉
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业论文(设计)}
+  \fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业\muc@paperortype}
   \fancyfoot[C]{\zihao{-5}\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
 }
@@ -223,7 +276,21 @@
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
 
 \newcommand{\makemuctableofcontents}{%
+  \cleardoublepage
+  \fancypagestyle{plain}{%
+    \fancyhf{}%
+    \renewcommand{\headrulewidth}{0pt}%
+  }%
+  \pagestyle{empty}%
   \tableofcontents
+  \addtocontents{toc}{\protect\thispagestyle{empty}}%
+  % 恢复 plain 样式供正文使用
+  \fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyhead[R]{\zihao{-5}\songti 中央民族大学本科毕业\muc@paperortype}%
+    \fancyfoot[C]{\zihao{-5}\thepage}%
+    \renewcommand{\headrulewidth}{0.4pt}%
+  }%
 }
 
 \newcommand{\makecoverpage}{%
@@ -328,12 +395,22 @@
     \vspace{1cm}
     指导老师签名：\muc@printsigsupervisor \hspace{1cm} 日期：\underline{\makebox[3cm][c]{2026.4.20}} \par
   \end{flushright}
+  
+  \remark{
+\zihao{-4}\fangsong
+\noindent 关于封面、任务书、承诺书、授权书等前置材料的说明：由于涉及到签字，自动排版通常会比较困难。在这一版本中，我们推荐暂时使用word模板填写好相关内容，并将这四页转化为PDF格式，最终与摘要、正文等内容合并成一个完整的PDF文件提交。后续我们会考虑开发一个自动生成签字页的功能，敬请期待。
+
+\
+
+\noindent !!\textbf{重要}!! 如果要使用该Latex模板，请同时注意PDF中的内容以及\textbf{.tex后缀文件}中的命令和注释，尤其是\texttt{main.tex}中的相关命令和注释说明。确保正确填写并生成包含签字的PDF文件，否则可能会导致提交的PDF不符合要求或编译报错等bug。
+}
   \cleardoublepage
 }
 
 \newenvironment{cnabstract}{
   \cleardoublepage
-  \pagestyle{empty}
+  \pagenumbering{Roman}%
+  \pagestyle{abstract}%
   \begin{center}
     {\heiti\zihao{3} \@title}
   \end{center}
@@ -353,7 +430,7 @@
 
 \newenvironment{enabstract}{
   \cleardoublepage
-  \pagestyle{empty}
+  \pagestyle{abstract}%
   \begin{center}
     {\bfseries\rmfamily\zihao{3} \muc@entitle}
   \end{center}
@@ -388,7 +465,7 @@
 
 \newcommand{\makeaipage}{%
   \cleardoublepage
-  \thispagestyle{fancy}
+  \thispagestyle{empty}
   \begin{center}
     \xiaobiaosong\zihao{2} 关于使用 AI 工具情况的说明
   \end{center}
@@ -402,7 +479,7 @@
     题\hspace{1em}目 & \multicolumn{3}{>{\fangsong\zihao{4}}l!{\vrule width 1.5pt}}{\@title} \\ \Xhline{0.4pt}
     \begin{minipage}[c][9.0cm][c]{3.2cm}
         \centering \fangsong\zihao{4} \begin{tabular}{c} 使用 AI 工具 \\ 情况的说明 \\ （可加页） \end{tabular}
-    \end{minipage} & \multicolumn{3}{>{\kaishu\zihao{5}\bfseries}m{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}!{\vrule width 1.5pt}}{
+    \end{minipage} & \multicolumn{3}{>{\fangsong\zihao{-4}}m{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}!{\vrule width 1.5pt}}{
         \begin{minipage}[t][9.0cm][t]{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}
             说明：\par
             1. 需列出所使用的 AI 工具相关信息，包括工具名称、开发者、版本、使用日期、使用方式等。\par

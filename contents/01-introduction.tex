@@ -1,4 +1,19 @@
-\chapter{绪论}
+\chapter{绪\hspace{1em}论}
+
+\remark{在撰写本毕业论文（设计）前，请详细阅读“中央民族大学本科毕业论文（设计）工作管理办法”和“中央民族大学本科生毕业论文（设计）撰写规范”，并按照要求执行。}
+
+\highlightremark{信计、统计为本科毕业论文，光电、纳米专业为本科毕业设计，注意修改页眉。在\texttt{main.tex}的必填项中，\texttt{\textbackslash paperortype}命令设置为“论文”或“设计”，会自动调整页眉内容。}
+
+\
+
+\blueremark{物理专业的论文内容特别注意：
+\begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \item 每章结尾需要有本章小结。
+    \item 通常第一章引言 1.1 为研究背景，1.2 为国内外现状，第一章最后一节为本文主要研究内容，第一章引言要图文并茂最少 4 页以上内容，包括大部分参考文献的引用，一定要标注出参考文献，不能乱标。引言 2 页内的肯定是不合格的。
+    \item 通常第二章介绍理论与原理，第三章为自己的研究工作，第四章为总结与展望。
+\end{enumerate}}
 
 \section{模板简介}
 本模板（\texttt{muc-thesis}）旨在为中央民族大学（MUC）本科生提供一个符合学校最新排版规范、高度自动化且易于维护的 \LaTeX{} 毕业论文模板。
@@ -51,6 +66,10 @@
     \item \textbf{自适应宽度}：如果表格内容极多，可以使用模板内置的 \texttt{tabularx} 环境实现自动换行。
 \end{itemize}
 
+\remark{
+完成论文后注意不要出现因为图片空间不够自动放到下一页，导致上一页结尾有半页空白的情况，合理调节图片大小，尽量使用 \LaTeX{} 自带的图表htbp参数调整位置，做到每页都是满的。
+}
+
 \section{公式示例}
 根据学校规范，公式应按章编号（例如式~\eqref{eq:quadratic}）。在 Word 中需要繁琐的 MathType 设置和 Tab 键对齐，而在 \LaTeX{} 中这一切都是自动完成的。
 
@@ -73,5 +92,5 @@
     \item \textbf{字体一致性}：模板默认使用 Times New Roman 风格的数学字体，无需手动设置。
     \item \textbf{交叉引用}：使用 \texttt{\textbackslash label} 标记，\texttt{\textbackslash eqref} 引用。引用会自动带上圆括号，且编号会随顺序调整自动更新。
     \item \textbf{行内公式}：对于数学符号或简短公式，请使用 \texttt{\detokenize{$...$}} 或 \texttt{\detokenize{\(...\)}} 将具体公式内容包裹（例如 \texttt{\detokenize{$E=mc^2$}}，渲染后即$E=mc^2$）。此类公式会随当前段落文本流排版，且不会分配公式编号。
-    \item \textbf{小寄巧}：对于不熟悉Latex公式语法的同学，可以先在纸上手写需要的公式，然后使用带有\textbf{多模态理解}能力的AI产品（国产例如豆包/千问），让AI转化为Latex格式即可。
+    \item \textbf{小技巧}：对于不熟悉Latex公式语法的同学，可以先在纸上手写需要的公式，然后使用带有\textbf{多模态理解}能力的AI产品（国产例如豆包/千问），让AI转化为Latex格式即可。
 \end{itemize}

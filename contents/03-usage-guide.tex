@@ -1,15 +1,19 @@
 \chapter{模板使用指南}
 
-\section{修改个人信息}
-你需要打开主文件 \texttt{main.tex}，在导言区（\texttt{\textbackslash begin\{document\}} 之前）修改以下命令：
+\section{必填项设置}
+打开主文件 \texttt{main.tex}，在导言区必填项部分按注释提示修改以下命令：
 \begin{itemize}
     \item \texttt{\textbackslash title\{...\}}：论文中文题目。
-    \item \texttt{\textbackslash author\{...\}}：你的姓名。
-    \item \texttt{\textbackslash studentid\{...\}}：学号。
-    \item \texttt{\textbackslash college\{...\}}：学院（如理学院）。
-    \item \texttt{\textbackslash major\{...\}}：专业。
-    \item \texttt{\textbackslash supervisor\{...\}}：指导教师姓名。
+    \item \texttt{\textbackslash entitle\{...\}}：论文英文题目。
+    \item \texttt{\textbackslash paperortype\{...\}}：设置为"论文"或"设计"，控制页眉显示。信计、统计专业填"论文"，光电、纳米专业填"设计"。
 \end{itemize}
+
+此外，导言区中有一行被注释的 \texttt{\textbackslash hideremarks} 命令，取消注释即可一键隐藏模板中所有红色提示信息（\texttt{\textbackslash remark\{\}}）。
+
+\section{选填项：个人信息与前置页}
+导言区中 \texttt{\textbackslash author}、\texttt{\textbackslash studentid}、\texttt{\textbackslash college}、\texttt{\textbackslash major}、\texttt{\textbackslash supervisor} 等个人信息为选填项，仅在需要用 \LaTeX{} 自动生成封面和前置页时填写。
+
+\remark{推荐方案：使用 Word 模板填写好封面、任务书、承诺书、授权书并签字后，将这四页转为 PDF 存入 \texttt{frontmatter/} 文件夹，按 \texttt{main.tex} 中的注释说明插入即可。具体操作请参考 \texttt{main.tex} 中的详细注释。}
 
 \section{章节与段落写作建议}
 
@@ -34,3 +38,13 @@
     \item \textbf{草稿模式}：将 \texttt{\textbackslash documentclass} 改为 \texttt{\textbackslash documentclass[draft]\{muc-thesis\}}，可跳过图片渲染。
     \item \textbf{优化图片}：确保 \texttt{figures/} 下的图片单张大小不超过 1MB，推荐使用 PDF 或压缩后的 PNG。
 \end{enumerate}
+
+\remark{
+\noindent 关于其他具体内容相关的问题，请查看当年学院的毕业论文官方Word模板中的相关说明，或者直接联系指导教师进行咨询。
+
+\medskip
+\noindent 注意，本模板最初版由学生自主开发，虽然目前已经有多位老师和同学协力测试和优化，但仍可能存在一些细节问题或不适用的情况。因此我们强烈建议，即使使用了本模板，也要仔细阅读学校的相关规范文件，同时也要阅读\inlinehighlight{Word模板中的相关说明}，确保最终提交的论文符合学校的要求。
+
+\medskip
+\noindent 如果你在使用过程中遇到任何问题，欢迎随时反馈。请认准项目官方Github链接：\url{https://github.com/KardeniaPoyu/muc-thesis}，在Issues中提交你的问题或建议，我们会尽快回复并持续优化模板。
+}

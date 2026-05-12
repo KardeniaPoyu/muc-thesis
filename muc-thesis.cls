@@ -130,6 +130,12 @@
   \fi
 }
 
+\newcommand{\inlinehighlight}[1]{%
+  \ifshowremarks
+    \colorbox{yellow}{\color{red}#1}%
+  \fi
+}
+
 % 电子签名处理逻辑
 \newcommand{\muc@sigstudentimage}{}
 \newcommand{\muc@sigstudentwidth}{2.5cm}

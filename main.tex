@@ -1,6 +1,26 @@
 \documentclass{muc-thesis}
 
+% ！！重要！！
+% ！！以下几行为必填项！！
+% 
 \title{中文题目（毕业论文题目）} % 设置中文标题（封面与摘要页同步更新）
+\entitle{English Title} % 设置英文标题（英文摘要页同步更新）
+\paperortype{设计} % 将{}里面的内容改成论文或设计。信计、统计专业改成论文，光电、纳米专业改成设计
+\keywordsCN{中央民族大学；本科毕业论文；LaTeX 模板；XeLaTeX} % 关键词，中文分号分隔
+\keywordsEN{Minzu University of China; undergraduate thesis; LaTeX template; XeLaTeX} % 关键词，英文分号分隔
+
+% 可以手动删除各个内容中的\remark{}红色提醒信息，也可取消注释该命令，自动隐藏模板中标红的的备注信息
+% ↓
+% \hideremarks 
+% ↑
+% 注释或取消注释
+% 
+% ！！以上几行为必填项！！请务必修改！！！
+
+
+
+% 注意，以下几行选填，主要保留模板的整体演示，实际情况建议使用word模板填写好相关内容后，根据\begin{document}中的提示，直接插入相应PDF页
+% 
 \author{学生姓名}
 \date{2026年4月20日}
 \subtitle{[副标题，可以没有]}
@@ -11,31 +31,43 @@
 \major{统计学}
 \supervisor{指导教师姓名}
 
-\entitle{English Title} % 设置英文标题（英文摘要页同步更新）
+
 \enauthor{Student Name}
 \ensupervisor{Supervisor Name}
 
 \coverlogo{image1.png}
 \covercategory{本科毕业论文（设计）}
-\keywordsCN{中央民族大学；本科毕业论文；LaTeX 模板；XeLaTeX}
-\keywordsEN{Minzu University of China; undergraduate thesis; LaTeX template; XeLaTeX}
+% 
+% 以上为选填项，可以不管
 
 \addbibresource{references.bib}
 
 \begin{document}
 
+% 这四个命令分别生成封面、任务书、承诺书、授权书页，主要用来演示和保持完整性。插入签字请使用word模板
 \makecoverpage
 \maketaskbook
 \makeintegritypage
 \makelicensepage
 
-% 如有签字版 PDF，可取消注释并替换文件名
+% 将填写好相关内容并签好字的封面、任务书、承诺书、授权书的 PDF，存入frontmatter文件夹下，注释掉以上四行\make...命令，并直接插入相应 PDF 页
+% 取消下方\insertfrontpdf{}命令的注释并替换文件名
+% 注意插入顺序
+% 1.封面
 % \insertfrontpdf{frontmatter/task-book-signed.pdf}
+% 2.任务书
+% \insertfrontpdf{frontmatter/cover-signed.pdf}
+% 3.承诺书
 % \insertfrontpdf{frontmatter/integrity-pledge-signed.pdf}
+% 4.授权书
+% \insertfrontpdf{frontmatter/license-signed.pdf}
+% 
+% 或者也可以直接4页作为整体，导出为一个PDF，插入
+% \insertfrontpdf{frontmatter/total.pdf}
 
 \include{contents/abstract}
 
-\tableofcontents
+\makemuctableofcontents
 
 \mainmatter
 \pagestyle{fancy} % 显式声明开启页眉页脚
@@ -49,8 +81,14 @@
 \nocite{*} % 强制显示所有参考文献条目，无论正文是否引用
 \printbibliography[heading=bibintoc,title={参考文献}]
 
-\makeaipage
-
 \include{contents/acknowledgements}
+
+% AI 使用说明页，同样涉及到签字问题，提交PDF时整行注释以隐藏
+\makeaipage
+% 然后插入签字后的AI使用说明PDF，自行修改文件名
+% \insertfrontpdf{frontmatter/ai-usage-signed.pdf}
+
+% 以下为模板贡献者名单页，提交PDF时整行注释以隐藏
+\include{contents/contributors}
 
 \end{document}

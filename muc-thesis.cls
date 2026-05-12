@@ -109,7 +109,7 @@
 \newcommand{\hideremarks}{\showremarksfalse}
 \newcommand{\remark}[1]{%
   \ifshowremarks
-    {\color{red}\zihao{-4}\songti #1}%
+    {\color{red}\zihao{5}\songti #1}%
   \fi
 }
 
@@ -365,6 +365,7 @@
   \end{flushright}
   
   \remark{
+\zihao{-4}\fangsong
 \noindent 关于封面、任务书、承诺书、授权书等前置材料的说明：由于涉及到签字，自动排版通常会比较困难。在这一版本中，我们推荐暂时使用word模板填写好相关内容，并将这四页转化为PDF格式，最终与摘要、正文等内容合并成一个完整的PDF文件提交。后续我们会考虑开发一个自动生成签字页的功能，敬请期待。
 
 \
@@ -446,7 +447,7 @@
     题\hspace{1em}目 & \multicolumn{3}{>{\fangsong\zihao{4}}l!{\vrule width 1.5pt}}{\@title} \\ \Xhline{0.4pt}
     \begin{minipage}[c][9.0cm][c]{3.2cm}
         \centering \fangsong\zihao{4} \begin{tabular}{c} 使用 AI 工具 \\ 情况的说明 \\ （可加页） \end{tabular}
-    \end{minipage} & \multicolumn{3}{>{\kaishu\zihao{5}\bfseries}m{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}!{\vrule width 1.5pt}}{
+    \end{minipage} & \multicolumn{3}{>{\fangsong\zihao{-4}}m{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}!{\vrule width 1.5pt}}{
         \begin{minipage}[t][9.0cm][t]{\dimexpr\textwidth-3.6cm-6\tabcolsep-4\arrayrulewidth}
             说明：\par
             1. 需列出所使用的 AI 工具相关信息，包括工具名称、开发者、版本、使用日期、使用方式等。\par

@@ -147,7 +147,7 @@
 
 \newcommand{\muc@printsigstudent}{%
   \ifdefempty{\muc@sigstudentimage}{%
-    \underline{\hspace{4cm}}%
+    \hspace{4cm}%
   }{%
     \smash{\raisebox{-0.2\height}{\includegraphics[width=\muc@sigstudentwidth]{\muc@sigstudentimage}}}%
   }%
@@ -155,7 +155,7 @@
 
 \newcommand{\muc@printsigsupervisor}{%
   \ifdefempty{\muc@sigsupervisorimage}{%
-    \underline{\hspace{4cm}}%
+    \hspace{4cm}%
   }{%
     \smash{\raisebox{-0.2\height}{\includegraphics[width=\muc@sigsupervisorwidth]{\muc@sigsupervisorimage}}}%
   }%

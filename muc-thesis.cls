@@ -102,7 +102,7 @@
 \newcommand{\subtitle}[1]{\gdef\muc@subtitle{#1}}
 \newcommand{\paperortype}[1]{\gdef\muc@paperortype{#1}}
 
-% 红色提醒开关
+% 红色、蓝色、高亮色提醒开关
 \newif\ifshowremarks
 \showremarkstrue
 \newcommand{\showremarks}{\showremarkstrue}
@@ -110,6 +110,23 @@
 \newcommand{\remark}[1]{%
   \ifshowremarks
     {\color{red}\zihao{5}\songti #1}%
+  \fi
+}
+
+\newcommand{\blueremark}[1]{%
+  \ifshowremarks
+    {\color{blue}\zihao{5}\songti #1}%
+  \fi
+}
+
+\newcommand{\highlightremark}[1]{%
+  \ifshowremarks
+    \medskip
+    \noindent\colorbox{yellow}{%
+      \parbox{\dimexpr\textwidth-2\fboxsep}{%
+        \hspace{2\ccwd}\color{red}\zihao{5}\songti #1%
+      }%
+    }\par\medskip
   \fi
 }
 

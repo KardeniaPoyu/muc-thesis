@@ -37,9 +37,18 @@
   footskip=0.75cm
 }
 
-\setmainfont{Times New Roman}
-\setsansfont{Times New Roman}
-\setmonofont{Courier New}
+% 英文主字体处理
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \setsansfont{Times New Roman}
+}{
+  % Linux 环境回退到开源字体或保持默认
+}
+
+\IfFontExistsTF{Courier New}{
+  \setmonofont{Courier New}
+}{}
+
 
 % 字体处理：仅在 Windows 环境下强制指定宋体系列，其他环境（如 Linux/CI）交由 ctex 自动处理
 \IfFontExistsTF{SimSun}{

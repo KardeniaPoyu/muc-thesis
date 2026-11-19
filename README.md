@@ -2,7 +2,20 @@
 
 一个符合中央民族大学学校规范、专业且易用的 LaTeX 本科生毕业论文模板。
 
-## 用 Agent 配置模板
+<p align="center">
+  <img src="./figures/preview1.png" width="190" />
+  <img src="./figures/preview2.png" width="190" />
+  <img src="./figures/preview3.png" width="190" />
+  <img src="./figures/preview4.png" width="190" />
+</p>
+
+模板参考了 Word 版本的 [【毕业论文模板】-2025年11月理学院发布.doc](./docs/【毕业论文模板】-2025年11月理学院发布.doc)，适用于大部分学院通用要求。
+
+---
+
+## 如何使用
+
+### 用 Agent 配置模板（快速开始，推荐）
 
 把下面整段复制给 Agent。你可以在末尾附上已知的论文信息，也可以先用占位内容跑通编译。
 
@@ -16,19 +29,6 @@
 
 我的论文信息（可留空）：[粘贴已知信息]
 ```
-
-<p align="center">
-  <img src="./figures/preview1.png" width="190" />
-  <img src="./figures/preview2.png" width="190" />
-  <img src="./figures/preview3.png" width="190" />
-  <img src="./figures/preview4.png" width="190" />
-</p>
-
-模板参考了 Word 版本的 [【毕业论文模板】-2025年11月理学院发布.doc](./docs/【毕业论文模板】-2025年11月理学院发布.doc)，适用于大部分学院通用要求。
-
----
-
-## 如何使用
 
 ### Overleaf 编辑（在线）
 

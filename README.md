@@ -1,7 +1,22 @@
 # 中央民族大学本科毕业论文 $\LaTeX$ 模板 
 
 一个符合中央民族大学学校规范、专业且易用的 LaTeX 本科生毕业论文模板。
- 
+
+## 用 Agent 配置模板
+
+把下面整段复制给 Agent。你可以在末尾附上已知的论文信息，也可以先用占位内容跑通编译。
+
+```text
+请帮我把中央民族大学本科毕业论文 LaTeX 模板（https://github.com/KardeniaPoyu/muc-thesis）配置成一个可以开始写作、能编译出 PDF 的论文项目。
+
+1. 如果工作区已有我的论文项目，就在现有项目中操作，保留我写过的内容。否则，从模板获取一份本地副本。先读 `README.md` 和 `main.tex`。
+2. 把我提供的中英文题目、关键词、姓名、学号、学院、专业和导师信息填入 `main.tex` 的对应字段。其余字段保留占位内容，并列出待补项。保留 `muc-thesis.cls` 中的学校排版设置。
+3. 检查 XeLaTeX 和 Biber。在项目根目录运行 `make main`。如果只有 `make` 不可用，依次运行 `xelatex main`、`biber main`、`xelatex main`、`xelatex main`。如果缺少 LaTeX 依赖，参考 README 的 Dev Container 配置继续。
+4. 确认生成了 `main.pdf`，告诉我 PDF 的位置、还要填哪些字段，以及从 `contents/` 下的哪个文件开始写作。如果编译仍失败，给出具体报错和缺少的依赖。
+
+我的论文信息（可留空）：[粘贴已知信息]
+```
+
 <p align="center">
   <img src="./figures/preview1.png" width="190" />
   <img src="./figures/preview2.png" width="190" />

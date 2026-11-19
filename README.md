@@ -2,18 +2,19 @@
 
 一个符合中央民族大学学校规范、专业且易用的 LaTeX 本科生毕业论文模板。
 
-## 用 Agent 快速开始
+## 用 Agent 配置模板
 
-在你自己的论文仓库中打开 Agent，复制下面这段话，并替换最后一行的任务。
+把下面整段复制给 Agent。你可以在末尾附上已知的论文信息，也可以先用占位内容跑通编译。
 
 ```text
-我在用中央民族大学本科毕业论文 LaTeX 模板（https://github.com/KardeniaPoyu/muc-thesis）。请在当前论文仓库里完成下面的任务。
+请帮我把中央民族大学本科毕业论文 LaTeX 模板（https://github.com/KardeniaPoyu/muc-thesis）配置成一个可以开始写作、能编译出 PDF 的论文项目。
 
-先读 README.md 和 main.tex。封面信息和章节顺序在 main.tex，摘要和正文在 contents/，参考文献在 references.bib。按任务修改相关文件，保留学校要求的排版。缺少的个人信息、实验数据或文献信息请列出来，留给我补充。
+1. 如果工作区已有我的论文项目，就在现有项目中操作，保留我写过的内容。否则，从模板获取一份本地副本。先读 `README.md` 和 `main.tex`。
+2. 把我提供的中英文题目、关键词、姓名、学号、学院、专业和导师信息填入 `main.tex` 的对应字段。其余字段保留占位内容，并列出待补项。保留 `muc-thesis.cls` 中的学校排版设置。
+3. 检查 XeLaTeX 和 Biber。在项目根目录运行 `make main`。如果只有 `make` 不可用，依次运行 `xelatex main`、`biber main`、`xelatex main`、`xelatex main`。如果缺少 LaTeX 依赖，参考 README 的 Dev Container 配置继续。
+4. 确认生成了 `main.pdf`，告诉我 PDF 的位置、还要填哪些字段，以及从 `contents/` 下的哪个文件开始写作。如果编译仍失败，给出具体报错和缺少的依赖。
 
-修改后在仓库根目录运行 `make main`，用 XeLaTeX 和 Biber 生成 main.pdf。告诉我改了哪些文件、编译是否成功，以及还有哪些内容需要我补充。如果缺少编译工具，说明缺哪项。
-
-本次任务：[填入任务，例如「把我提供的中英文摘要和关键词填入模板」]
+我的论文信息（可留空）：[粘贴已知信息]
 ```
 
 <p align="center">

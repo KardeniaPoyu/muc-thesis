@@ -1,7 +1,21 @@
 # 中央民族大学本科毕业论文 $\LaTeX$ 模板 
 
 一个符合中央民族大学学校规范、专业且易用的 LaTeX 本科生毕业论文模板。
- 
+
+## 用 Agent 快速开始
+
+在你自己的论文仓库中打开 Agent，复制下面这段话，并替换最后一行的任务。
+
+```text
+我在用中央民族大学本科毕业论文 LaTeX 模板（https://github.com/KardeniaPoyu/muc-thesis）。请在当前论文仓库里完成下面的任务。
+
+先读 README.md 和 main.tex。封面信息和章节顺序在 main.tex，摘要和正文在 contents/，参考文献在 references.bib。按任务修改相关文件，保留学校要求的排版。缺少的个人信息、实验数据或文献信息请列出来，留给我补充。
+
+修改后在仓库根目录运行 `make main`，用 XeLaTeX 和 Biber 生成 main.pdf。告诉我改了哪些文件、编译是否成功，以及还有哪些内容需要我补充。如果缺少编译工具，说明缺哪项。
+
+本次任务：[填入任务，例如「把我提供的中英文摘要和关键词填入模板」]
+```
+
 <p align="center">
   <img src="./figures/preview1.png" width="190" />
   <img src="./figures/preview2.png" width="190" />
